@@ -260,7 +260,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 }
 
 .text-color {
-  color: #f89d35;
+  color: white ;
 }
 
 .text-black {
@@ -1792,7 +1792,7 @@ h3.quote::before {
   color: #f89d35;
 }
 .footer-menu li a i {
-  color: #f89d35;
+  color: white;
   margin-right: 9px;
 }
 
