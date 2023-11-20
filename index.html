@@ -268,7 +268,32 @@
 					</div>
 				</div>
 			</div>
+<!-- pppp-->
+<div class="column is-4-desktop is-6-tablet">
+    <div class="cause-item">
+        <img src="images/product/kopiaren.webp" class="w-100" alt="...">
 
+        <div class="card-body">
+            <h3 class="mb-4"><a href="cause-single.html">Kopi Aren</a></h3>
+
+            <ul class="list-inline border-bottom border-top py-3 mb-4">
+                <li class="list-inline-item"><i class="icofont-check text-color mr-2"></i>Harga: <span>RP. 13.000</span></li>
+            </ul>
+            <p class="card-text mb-5">Kopi Nikmat Yang Menemanimu Dikala Hujan.</p>
+
+            <!-- Quantity Section -->
+            <div class="quantity-section">
+                <button id="kopiaren-decrement" class="btn btn-quantity">-</button>
+                <span id="kopiaren-quantity" class="quantity">1</span>
+                <button id="kopiaren-increment" class="btn btn-quantity">+</button>
+                <span id="kopiaren-price" class="hidden" data-price="13.000"></span>
+                <span id="kopiaren-total" class="total">Total: RP. 13.000</span>
+            </div>
+
+            <button id="kopiaren-buy-now" class="btn btn-main is-rounded">Buy Now</button>
+        </div>
+    </div>
+</div>
 			<!-- Kopi Americano -->
 			<div class="column is-4-desktop is-6-tablet">
 				<div class="cause-item">
@@ -447,6 +472,20 @@
 		});
 
 		// Add similar event listeners for other products with appropriate IDs
+		 // Event listeners for Kopi Aren
+		 document.getElementById("kopiaren-increment").addEventListener("click", function () {
+            incrementQuantity("kopiaren");
+        });
+
+        document.getElementById("kopiaren-decrement").addEventListener("click", function () {
+            decrementQuantity("kopiaren");
+        });
+
+        // Event listener for Kopi Aren Buy Now button
+        document.getElementById("kopiaren-buy-now").addEventListener("click", function () {
+            redirectToDonationPage("kopiaren");
+        });
+
 	});
 </script>
 
