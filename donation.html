@@ -1,0 +1,59 @@
+<!-- donation.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUY Page</title>
+    <!-- Add your existing CSS and other head elements here -->
+</head>
+
+<body>
+
+    <h1>Pembayaran Information</h1>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Function to get URL parameters
+            function getUrlParameter(name) {
+                name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+                var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+                var results = regex.exec(location.search);
+                return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+            }
+
+            // Retrieve product information from URL
+            var productName = getUrlParameter('product');
+            var quantity = getUrlParameter('quantity');
+            var total = getUrlParameter('total');
+
+            // Pre-fill form fields
+            document.getElementById('productName').textContent = productName;
+            document.getElementById('quantity').textContent = quantity;
+            document.getElementById('total').textContent = total;
+        });
+
+        function submitDonation() {
+            // Your donation submission logic here
+            alert('Donation submitted!');
+        }
+    </script>
+
+    <!-- Your donation form -->
+    <div>
+        <!-- Add your form fields here -->
+        <p><strong>Product:</strong> <span id="productName"></span></p>
+        <p><strong>Quantity:</strong> <span id="quantity"></span></p>
+        <p><strong>Total:</strong> <span id="total"></span></p>
+
+        <!-- Add other form fields as needed -->
+
+        <button onclick="submitDonation()">Bayarkan Disini</button>
+    </div>
+
+    <!-- Add your existing scripts and closing body/html tags here -->
+
+</body>
+
+</html>

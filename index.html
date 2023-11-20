@@ -240,72 +240,67 @@
 <!-- Section About Start -->
 <section class="section causes">
 	<div class="container">
-		<div class="columns is-justify-content-center">
-			<div class="column is-7-desktop is-8-tablet">
-				<div class="section-title has-text-centered">
-					<span class="text-color">Latest Events</span>
-					<h2 class="mt-4 mb-5 is-relative content-title">Our Recent Product <br> In Rumah Kopi</h2>
-					<p class="mb-5">Ada Berbagai Product Unggulan Yang Tersedia Di Rumah Kopi.</p>
-					<a href="product.html" target="_blank" class="btn btn-main is-rounded">Kuy Lihat</a>
-
-				</div>
-			</div>
-		</div>
-
 		<div class="columns is-multiline is-justify-content-center">
+
+			<!-- Kopi Espresso One Shot -->
 			<div class="column is-4-desktop is-6-tablet">
 				<div class="cause-item">
-					<img src="images/product/kopiaren.webp" class=" w-100" alt="...">
-
-					<div class="card-body">
-						<h3 class="mb-4"><a href="cause-single.html">Kopi Aren</a></h3>
-
-						<ul class="list-inline border-bottom border-top py-3 mb-4">
-						<li class="list-inline-item"><i class="icofont-check text-color mr-2"></i>Harga:	<span>RP. 13.000</span></li>
-						</ul>
-						<p class="card-text mb-5">Kopi Nikmat Yang Menemanimu Dikala Hujan.</p>
-
-						<a href="donation.html" class="btn btn-main is-rounded">Buy Now</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="column is-4-desktop is-6-tablet">
-				<div class="cause-item">
-					<img src="images/product/kopiespresso.webp" class=" w-100" alt="...">
+					<img src="images/product/kopiespresso.webp" class="w-100" alt="...">
 
 					<div class="card-body">
 						<h3 class="mb-4"><a href="cause-single.html">Kopi Espresso One Shot</a></h3>
 
 						<ul class="list-inline border-bottom border-top py-3 mb-4">
-					    <li class="list-inline-item"><i class="icofont-check text-color mr-2"></i>Harga:	<span>RP. 10.000</span></li>
+							<li class="list-inline-item"><i class="icofont-check text-color mr-2"></i>Harga: <span>RP. 10.000</span></li>
 						</ul>
 						<p class="card-text mb-5">Kopi Nikmat Yang Membuat Badan Bergoyang.</p>
 
-						<a href="donation.html" class="btn btn-main is-rounded">Buy Now</a>
+						<!-- Quantity Section -->
+						<div class="quantity-section">
+							<button id="kopiespresso-decrement" class="btn btn-quantity">-</button>
+							<span id="kopiespresso-quantity" class="quantity">1</span>
+							<button id="kopiespresso-increment" class="btn btn-quantity">+</button>
+							<span id="kopiespresso-price" class="hidden" data-price="10.000"></span>
+							<span id="kopiespresso-total" class="total">Total: RP. 10.000</span>
+						</div>
+
+						<button id="kopiespresso-buy-now" class="btn btn-main is-rounded">Buy Now</button>
 					</div>
 				</div>
 			</div>
+
+			<!-- Kopi Americano -->
 			<div class="column is-4-desktop is-6-tablet">
 				<div class="cause-item">
-					<img src="images/product/kopiamericano.jpeg" class=" w-100" alt="...">
+					<img src="images/product/kopiamericano.jpeg" class="w-100" alt="...">
 
 					<div class="card-body">
 						<h3 class="mb-4"><a href="cause-single.html">Kopi Americano </a></h3>
 
 						<ul class="list-inline border-bottom border-top py-3 mb-4">
-					    <li class="list-inline-item"><i class="icofont-check text-color mr-2"></i>Harga:	<span>RP. 12.000</span></li>
+							<li class="list-inline-item"><i class="icofont-check text-color mr-2"></i>Harga: <span>RP. 12.000</span></li>
 						</ul>
 						<p class="card-text mb-5">Kopi Nikmat Yang Menemani Bergadangmu.</p>
 
-						<a href="donation.html" class="btn btn-main is-rounded">Buy Now</a>
+						<!-- Quantity Section -->
+						<div class="quantity-section">
+							<button id="kopiamericano-decrement" class="btn btn-quantity">-</button>
+							<span id="kopiamericano-quantity" class="quantity">1</span>
+							<button id="kopiamericano-increment" class="btn btn-quantity">+</button>
+							<span id="kopiamericano-price" class="hidden" data-price="12.000"></span>
+							<span id="kopiamericano-total" class="total">Total: RP. 12.000</span>
+						</div>
+
+						<button id="kopiamericano-buy-now" class="btn btn-main is-rounded">Buy Now</button>
 					</div>
 				</div>
 			</div>
+
 		</div>
 	</div>
 </section>
 
+<!-- Add your existing scripts and closing body/html tags here -->
 <!-- Section About End -->
 
 <!-- footer Start -->
@@ -371,6 +366,89 @@
     <!-- 
     Essential Scripts
     =====================================-->
+<!-- Add this script at the end of your HTML body or in the head section -->
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		// Function to handle quantity increment
+		function incrementQuantity(productName) {
+			var quantityElement = document.getElementById(productName + "-quantity");
+			var priceElement = document.getElementById(productName + "-price");
+
+			var quantity = parseInt(quantityElement.textContent);
+			var price = parseFloat(priceElement.dataset.price);
+
+			quantity++;
+			quantityElement.textContent = quantity;
+			updateTotalPrice(productName, quantity, price);
+		}
+
+		// Function to handle quantity decrement
+		function decrementQuantity(productName) {
+			var quantityElement = document.getElementById(productName + "-quantity");
+			var priceElement = document.getElementById(productName + "-price");
+
+			var quantity = parseInt(quantityElement.textContent);
+			var price = parseFloat(priceElement.dataset.price);
+
+			if (quantity > 1) {
+				quantity--;
+				quantityElement.textContent = quantity;
+				updateTotalPrice(productName, quantity, price);
+			}
+		}
+
+		// Function to update total price based on quantity
+		function updateTotalPrice(productName, quantity, price) {
+			var totalElement = document.getElementById(productName + "-total");
+			var total = quantity * price;
+			totalElement.textContent = "Total: RP. " + total.toFixed(3);
+		}
+
+		// Function to get URL parameters
+		function getUrlParameter(name) {
+			name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+			var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+			var results = regex.exec(location.search);
+			return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+		}
+
+		// Function to redirect to donation.html with product information
+		function redirectToDonationPage(productName) {
+			var quantity = document.getElementById(productName + "-quantity").textContent;
+			var total = document.getElementById(productName + "-total").textContent;
+
+			window.location.href = "donation.html?product=" + productName + "&quantity=" + quantity + "&total=" + total;
+		}
+
+		// Event listeners for each product
+		document.getElementById("kopiespresso-increment").addEventListener("click", function () {
+			incrementQuantity("kopiespresso");
+		});
+
+		document.getElementById("kopiespresso-decrement").addEventListener("click", function () {
+			decrementQuantity("kopiespresso");
+		});
+
+		document.getElementById("kopiamericano-increment").addEventListener("click", function () {
+			incrementQuantity("kopiamericano");
+		});
+
+		document.getElementById("kopiamericano-decrement").addEventListener("click", function () {
+			decrementQuantity("kopiamericano");
+		});
+
+		// Event listeners for Buy Now buttons
+		document.getElementById("kopiespresso-buy-now").addEventListener("click", function () {
+			redirectToDonationPage("kopiespresso");
+		});
+
+		document.getElementById("kopiamericano-buy-now").addEventListener("click", function () {
+			redirectToDonationPage("kopiamericano");
+		});
+
+		// Add similar event listeners for other products with appropriate IDs
+	});
+</script>
 
     
     <!-- Main jQuery -->
