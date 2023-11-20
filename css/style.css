@@ -203,7 +203,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 }
 
 .section {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
 .section-sm {
@@ -715,10 +715,10 @@ ul.list-styled {
 }
 
 .slider {
-  background: url("../images/bg/banner.jpg") no-repeat;
+  background: url("../images/bg/banner.png") no-repeat;
   background-size: cover;
   background-position: 10% 0%;
-  padding: 100px 0;
+  padding: 200px 0;
   position: relative;
 }
 .slider .block h1 {
