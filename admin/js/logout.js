@@ -5,7 +5,7 @@ function logout() {
     if (result) {
         deleteCookie("token");
         // Mengarahkan ke halaman login
-        window.location.href = "https://rumahkopi.github.io/login.html";
+        window.location.href = "https://rumahkopi.github.io/";
     }
 }
 
