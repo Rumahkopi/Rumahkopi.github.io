@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donation Form</title>
-    <!-- Add your CSS styles or include external stylesheets here -->
+    <title>Order Form</title>
+    <link rel="stylesheet" href="css/styleb.css">
 </head>
 <body>
 
-    <h1>ORDER Form</h1>
-
     <form id="donationForm" action="success.html" method="get">
+        
+    <h1>ORDER FORM</h1>
         <p><span id="total"></span></p>
+
         <!-- Product details -->
         <label for="product">Product:</label>
         <input type="text" id="product" name="product" readonly>
 
         <label for="quantity">Quantity:</label>
         <input type="text" id="quantity" name="quantity" readonly>
+
         <!-- Additional user information (customize as needed) -->
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
@@ -31,18 +33,6 @@
         <input type="submit" value="Order Sekarang!!">
     </form>
 
-    <script>
-        // Fetch product details from URL parameters
-        var urlParams = new URLSearchParams(window.location.search);
-        var product = urlParams.get('product');
-        var quantity = urlParams.get('quantity');
-        var total = urlParams.get('total');
-
-        // Fill in the form with product details
-        document.getElementById('product').value = product;
-        document.getElementById('quantity').value = quantity;
-        document.getElementById('total').textContent = total; // Set the text content of the <span> element
-    </script>
-
 </body>
 </html>
+<script src="js/scriptb.js" type="module"></script>
