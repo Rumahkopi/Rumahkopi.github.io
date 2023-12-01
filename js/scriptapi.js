@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch('https://api.lolhuman.xyz/api/random/katabijak?apikey=bijikuda')
         .then(response => response.json())
         .then(data => {
-            // Update the content of the paragraph with the daily quote
+            // Update the content of the paragraph with the daily quote quote hari ini
             document.getElementById('daily-quote').textContent = `kata - kata hari ini : ${data.result}`;
         })
         .catch(error => console.error('Error fetching daily quote:', error));
