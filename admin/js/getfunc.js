@@ -13,16 +13,7 @@ export let tableTemplate=`
 <td data-label="Name">#NAMA#</td>
 <td data-label="Harga">#HARGA#</td>
 <td data-label="Deskripsi">#DESKRIPSI#</td>
-<td class="is-actions-cell">
-<div class="buttons is-right">
-<button class="button is-small is-primary" type="button">
-<span class="icon"><i class="mdi mdi-eye"></i></span>
-</button>
-<button class="button is-small is-danger jb-modal" data-target="sample-modal" type="button">
-<span class="icon"><i class="mdi mdi-trash-can"></i></span>
-</button>
-</div>
-</td>
+<td data-label="Stok">#Stok#</td>
 ` 
 
 export function responseData(results){
@@ -31,7 +22,7 @@ export function responseData(results){
 }
 
 export function isiRow(value){
-    let content=tableTemplate.replace("#NAMA#",value.nama).replace("#HARGA#",value.harga).replace("#DESKRIPSI#",value.deskripsi);
+    let content=tableTemplate.replace("#NAMA#",value.nama).replace("#HARGA#",value.harga).replace("#DESKRIPSI#",value.deskripsi).replace("#STOK#",value.stok);
     console.log(content);
     addChild("produk",tableTag,tableRowClass,content);
 }

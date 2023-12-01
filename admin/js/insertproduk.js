@@ -17,12 +17,14 @@ document.addEventListener("DOMContentLoaded", function() {
         const nama = document.querySelector("#nama").value;
         const harga = document.querySelector("#harga").value;
         const deskripsi = document.querySelector("#deskripsi").value;
+        const stok = document.querySelector("#stok").value;
         console.log(nama)
     
         const data = {
             nama: nama,
             harga: harga,
             deskripsi: deskripsi,
+            stok : stok,
         };
         return data
     }
