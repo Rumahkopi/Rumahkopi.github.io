@@ -328,26 +328,6 @@
     <script src="js/script.js" type="module"></script>
 	<script src="js/scripta.js" type="module"></script>
 	<script src="js/scriptapi.js" type="module"></script>
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-		  // Select the product navbar link
-		  const productLink = document.querySelector('.navbar-item a.navbar-link');
-	  
-		  // Select the target section (ORDER HERE!!)
-		  const orderSection = document.querySelector('.section.causes');
-	  
-		  // Add click event listener to the product link
-		  productLink.addEventListener('click', function (event) {
-			// Prevent the default behavior of the link
-			event.preventDefault();
-	  
-			// Scroll smoothly to the target section
-			orderSection.scrollIntoView({
-			  behavior: 'smooth'
-			});
-		  });
-		});
-	  </script>
   </body>
   </html>
    
