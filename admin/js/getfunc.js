@@ -13,7 +13,7 @@ export let tableTemplate=`
 <td data-label="Name">#NAMA#</td>
 <td data-label="Harga">#HARGA#</td>
 <td data-label="Deskripsi">#DESKRIPSI#</td>
-<td data-label="Stok">#Stok#</td>
+<td data-label="Stok">#STOK#</td>
 ` 
 
 export function responseData(results){
