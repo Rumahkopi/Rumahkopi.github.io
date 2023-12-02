@@ -26,7 +26,19 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    function checkPageExists() {
+        var requestedPage = location.pathname; 
+        var validPages = ["/", "index", "/index" , "/index.html" , "index.html"]; 
 
+        if (!validPages.includes(requestedPage)) {
+          
+            window.location.href = '/404.html';
+        }
+    }
+
+    window.addEventListener('load', checkPageExists);
+</script> 
 </head>
 
 <body>

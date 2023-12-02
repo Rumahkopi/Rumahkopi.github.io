@@ -82,7 +82,10 @@ Array.from(document.getElementsByClassName('jb-notification-dismiss')).forEach(e
   });
 
   function cancelEdit() {
+    // Mengambil elemen card
     const editCard = document.getElementById('editCard');
+  
+    // Menyembunyikan card
     editCard.style.display = 'none';
   }
 
