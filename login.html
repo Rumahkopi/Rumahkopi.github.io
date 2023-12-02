@@ -12,24 +12,17 @@
   <link rel="shortcut icon" type="image/x-icon" href="./images/logo2.png" />
   <script src="https://kit.fontawesome.com/15181efa86.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/gh/angkringankuy/crotyajs@0.0.5/auth.js"></script>
-  <!-- <script>
-    function checkPageExists() {
-        var requestedPage = location.pathname; 
-        var validPages = ["/", "index", "/index" , "/index.html" , "index.html"]; 
 
-        if (!validPages.includes(requestedPage)) {
-          
-            window.location.href = '/404.html';
-        }
-    }
-
-    window.addEventListener('load', checkPageExists);
-</script> -->
 <link rel="stylesheet" href="css/stylelogin.css">
+
+
 </head>
 
 <body>
-
+	<div id="loader-wrapper">
+		<div id="loader"></div>
+		<div id="loading-text">. Sabar CUYY!</div>
+	  </div>
   <section class="container">
     <div class="columns is-multiline">
       <div class="column is-8 is-offset-2 register">
@@ -157,6 +150,8 @@
   }
 </script>
 <script type="module" src="./js/login.js"></script>
+
+
 </body>
 
 </html>

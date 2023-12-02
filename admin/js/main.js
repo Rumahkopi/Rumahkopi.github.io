@@ -64,3 +64,11 @@ Array.from(document.getElementsByClassName('jb-notification-dismiss')).forEach(e
     e.currentTarget.closest('.notification').classList.add('is-hidden')
   })
 })
+  // Menghilangkan overlay saat halaman selesai dimuat
+  document.onreadystatechange = function () {
+    if (document.readyState === 'complete') {
+      setTimeout(function () {
+        document.getElementById('loader-wrapper').style.display = 'none';
+      }, 2000); // Sesuaikan timeout dengan durasi animasi CSS
+    }
+  };
