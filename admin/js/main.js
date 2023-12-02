@@ -72,3 +72,20 @@ Array.from(document.getElementsByClassName('jb-notification-dismiss')).forEach(e
       }, 2000); // Sesuaikan timeout dengan durasi animasi CSS
     }
   };
+  document.addEventListener('DOMContentLoaded', function () {
+    const editCard = document.getElementById('editCard');
+    const eyeIcon = document.querySelector('.card-header-icon .icon.is-primary');
+
+    eyeIcon.addEventListener('click', function () {
+      editCard.style.display = 'block';
+    });
+  });
+
+  function cancelEdit() {
+    const editCard = document.getElementById('editCard');
+    editCard.style.display = 'none';
+  }
+
+  function saveChanges() {
+    cancelEdit();
+  }

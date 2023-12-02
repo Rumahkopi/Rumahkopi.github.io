@@ -15,6 +15,54 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 </head>
 <body>
+  <div id="editCard" class="card has-table" style="display: none;">
+    <div class="card-content">
+      <div class="content">
+        <form id="editForm">
+          <!-- Form input 1 -->
+          <div class="field">
+            <label class="label">nama</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Input 1" id="input1">
+            </div>
+          </div>
+  
+          <!-- Form input 2 -->
+          <div class="field">
+            <label class="label">harga</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Input 2" id="input2">
+            </div>
+          </div>
+            <!-- Form input 3 -->
+            <div class="field">
+              <label class="label">Deskripsi</label>
+              <div class="control">
+                <textarea class="textarea" placeholder="Textarea" id="textarea"></textarea>
+              </div>
+            </div>
+           <!-- Form input z -->
+           <div class="field">
+            <label class="label">stok</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Input 2" id="input2">
+            </div>
+          </div>         
+  
+          <!-- Buttons -->
+          <div class="field is-grouped">
+            <div class="control">
+              <button type="button" class="button is-primary" onclick="saveChanges()">Save Changes</button>
+            </div>
+            <div class="control">
+              <button type="button" class="button is-link" onclick="cancelEdit()">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
   <div id="loader-wrapper">
 		<div id="loader"></div>
 		<div id="loading-text">. Sabar CUYY!</div>
