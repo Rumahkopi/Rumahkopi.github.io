@@ -1836,4 +1836,51 @@ h3.quote::before {
     margin-left: 0px;
   }
 }
+    /* Keyframes untuk animasi mengetik */
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    /* Gaya untuk elemen yang dianimasikan */
+    .typewriter-text {
+      overflow: hidden; /* Membuat teks terpotong jika lebih panjang dari elemen */
+      border-bottom: 2px solid #fff; /* Garis yang menyerupai kursor mengetik */
+      white-space: nowrap; /* Mencegah perataan otomatis untuk mengikuti lebar maksimum */
+      margin: 0 auto; /* Pusatkan teks */
+      letter-spacing: 0.1em; /* Jarak antar huruf */
+      animation: typing 4s steps(40, end) 1s forwards; /* Terapkan animasi (durasi diperpanjang menjadi 4 detik) */
+    }
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Gaya untuk elemen loader */
+    #loader-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      z-index: 1000;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid #3498db;
+      border-radius: 50%;
+      border-top: 4px solid #e74c3c;
+      animation: spin 1s linear infinite;
+    }
 /*# sourceMappingURL=style.css.map */
