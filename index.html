@@ -84,7 +84,7 @@
 					</li>
 
 					<li class="navbar-item">
-						<a class="navbar-link" href="contact.html">Contact</a>
+						<a class="navbar-link" href="#contact-section">Contact</a>
 					</li>
 				</ul>
 			</div>
@@ -100,7 +100,6 @@
 				<div class="block has-text-centered">
 					<h1 class="mb-5 typewriter-text">Rumah Kopi</h1>
 					<p class="mb-6">Nikmati Harimu Dengan Secangkir Kopi.</p>
-					<a href="about.html" target="_blank" class="btn btn-main is-rounded">Kuy Ngopi</a>
 				</div>
 			</div>
 		</div>
@@ -253,6 +252,54 @@
 	<p id="daily-quote">kata - kata hari ini :</p>
 </div>
 </center>
+<section class="contact-wrap section-bottom">
+	<div class="container">
+	   <div class="columns is-multiline">
+		  <div class="column is-12">
+			 <form id="contact-form" class="contact__form" method="post" action="mail.php">
+				<span class="text-color">Send a message</span>
+				<h3 class="text-md mb-5" id="contact-section" >Pesan Yang Akan Anda Sampaikan Kepada Kami.</h3>
+				<!-- form message -->
+				<div class="columns is-gapless">
+				   <div class="column is-12">
+					  <div class="message is-primary contact__msg" style="display: none">
+						 <div class="message-body">
+							Your message was sent successfully.
+						 </div>
+					   </div>
+				   </div>
+				</div>
+				<!-- end message -->
+				<div class="columns is-multiline">
+				   <div class="column is-6-desktop is-6-tablet">
+					  <label>Your Name *</label>
+					  <input name="name" type="text" class="input">
+				   </div>
+				   <div class="column is-6-desktop is-6-tablet">
+					  <label>Your Email *</label>
+					  <input name="email" type="email" class="input">
+				   </div>
+				   <div class="column is-6-desktop is-6-tablet">
+					  <label>Your Subject *</label>
+					  <input name="subjecte" type="text" class="input">
+				   </div>
+				   <div class="column is-6-desktop is-6-tablet">
+					  <label>Your Phone Number *</label>
+					  <input name="phone" type="number" class="input" min="0">
+				   </div>
+				   <div class="column is-12">
+					  <label>Your Message *</label>
+					  <textarea name="message" class="input" rows="6"></textarea>
+				   </div>
+				   <div class="column is-12">
+					  <button class="btn btn-main is-rounded" name="submit" type="submit">Send Message</button>
+				   </div>
+				</div>
+			 </form>
+		  </div>
+	   </div>
+	</div>
+ </section>
 <!-- Add your existing scripts and closing body/html tags here -->
 
 <!-- footer Start -->

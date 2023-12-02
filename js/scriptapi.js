@@ -12,4 +12,4 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(function () {
         document.getElementById('loader-wrapper').style.display = 'none';
         document.getElementById('main-content').style.display = 'block';
-      }, 3000); 
+      }, 1500); 
