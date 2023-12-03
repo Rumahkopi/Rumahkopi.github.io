@@ -6,20 +6,21 @@
     <title>Checkout</title>
     <!-- Add your stylesheets and other head elements here -->
     <link rel="stylesheet" href="css/styleb.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    
 </head>
 <body>
-
 <section class="section causes">
     <div class="container">
         <div class="columns is-justify-content-center">
             <div class="column is-7-desktop is-8-tablet">
                 <div class="section-title has-text-centered">
-                    <span class="text-color">Checkout</span>
+                    <span class="title">Checkout</span>
                     <!-- Add any other checkout-related title or information here -->
                 </div>
             </div>
         </div>
-
         <!-- Checkout Form -->
         <form id="checkoutForm">
             <!-- Display product information -->
@@ -27,43 +28,42 @@
                 <div class="column is-4-desktop is-6-tablet">
                     <div class="cause-item">
                         <div class="card-body">
-                            <h3 class="mb-4">Product Details</h3>
+                            <h3 class="title">Product Details</h3>
                             <label for="productName">Product Name:</label>
-                            <input type="text" id="productName" name="productName" readonly>
+                            <input class="input is-small" type="text" id="productName" name="productName" readonly>
                             
                             <label for="productPrice">Price:</label>
-                            <input type="text" id="productPrice" name="productPrice" readonly>
+                            <input class="input is-small" type="text" id="productPrice" name="productPrice" readonly>
                             
                             <label for="productQuantity">Quantity:</label>
-                            <input type="text" id="productQuantity" name="productQuantity" readonly>
+                            <input class="input is-small" type="text" id="productQuantity" name="productQuantity" readonly>
                             
                             <label for="productTotal">Total:</label>
-                            <input type="text" id="productTotal" name="productTotal" readonly>
+                            <input class="input is-small" type="text" id="productTotal" name="productTotal" readonly>
                         </div>
                     </div>
                 </div>
             </div>
-
             <!-- Form inputs for additional checkout details -->
             <div class="columns is-multiline is-justify-content-center">
                 <div class="column is-4-desktop is-6-tablet">
                     <div class="cause-item">
                         <div class="card-body">
-                            <h3 class="mb-4">Customer Information</h3>
-                            <label for="customerName">Your Name:</label>
-                            <input type="text" id="customerName" name="customerName" required>
+                            <h3 class="title">Customer Information</h3>
+                            <label for="label">Your Name :</label>
+                            <input class="input is-small" id="customerName" type="text" required name="customerName">
                             
-                            <label for="customerEmail">Your Email:</label>
-                            <input type="email" id="customerEmail" name="customerEmail" required>
+                            <label for="customerEmail">Your Email :</label>
+                            <input class="input is-small" type="email" id="customerEmail" name="customerEmail" required>
                             
-                            <label for="customerAddress">Your Address:</label>
-                            <textarea id="customerAddress" name="customerAddress" rows="4" required></textarea>
+                            <label for="customerAddress">Your Address :</label>
+                            <textarea class="textarea" id="customerAddress" name="customerAddress" rows="4" required></textarea>
+                            <hr>
+                            <button type="submit">Confirm Purchase</button>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <button type="submit" class="btn btn-main is-rounded">Confirm Purchase</button>
         </form>
     </div>
 </section>

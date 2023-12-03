@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: hsl(0, 0%, 96%);
 }
 
 .section {
@@ -18,6 +19,8 @@ body {
     margin-bottom: 20px;
     font-size: 24px;
     color: #333;
+    font-weight: bold;
+    text-align: center;
 }
 
 .cause-item {
@@ -48,7 +51,7 @@ textarea {
 }
 
 button {
-    background-color: #007BFF;
+    background-color: hsl(0, 0%, 21%);
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -57,5 +60,6 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: white;
+    color: black;
 }
