@@ -171,95 +171,77 @@
 	</div>
 </section>
 
-<!-- Section About Start -->
 <section class="section causes">
-	<div class="container">
-		<center>
-		<h2 id="order-section" class="mt-4 mb-5 is-relative content-title">ORDER HERE!!</h2>
-	</center>
-		<div class="columns is-multiline is-justify-content-center">
+    <div class="container">
+        <div class="columns is-justify-content-center">
+            <!-- ... (unchanged code) ... -->
+        </div>
 
-			<!-- CARD Kopi Espresso -->
-			<div class="column is-4-desktop is-6-tablet">
-				<div class="cause-item">
-					<img src="images/product/kopiespresso.webp" class="w-100" alt="...">
-
-					<div class="card-body">
-						<h3 class="mb-4"><a href="cause-single.html">Kopi Espresso One Shot</a></h3>
-
-						<ul class="list-inline border-bottom border-top py-3 mb-4">
-							<li class="list-inline-item"><i class="icofont-check text-color mr-2"></i>Harga: <span>RP. 10.000</span></li>
-						</ul>
-						<p class="card-text mb-5">Kopi Nikmat Yang Membuat Badan Bergoyang.</p>
-
-						<!-- Quantity Section -->
-						<div class="quantity-section">
-							<button id="kopiespresso-decrement" class="btn btn-quantity">-</button>
-							<span id="kopiespresso-quantity" class="quantity">1</span>
-							<button id="kopiespresso-increment" class="btn btn-quantity">+</button>
-							<span id="kopiespresso-price" class="hidden" data-price="10.000"></span>
-							<span id="kopiespresso-total" class="total">Total: RP. 10.000</span>
-						</div>
-
-						<button id="kopiespresso-buy-now" class="btn btn-main is-rounded">Beli Sekarang</button>
-					</div>
-				</div>
-			</div>
-<!-- pembatas-->
-<div class="column is-4-desktop is-6-tablet">
-    <div class="cause-item">
-        <img src="images/product/kopiaren.webp" class="w-100" alt="...">
-
-        <div class="card-body">
-            <h3 class="mb-4"><a href="cause-single.html">Kopi Aren</a></h3>
-
-            <ul class="list-inline border-bottom border-top py-3 mb-4">
-                <li class="list-inline-item"><i class="icofont-check text-color mr-2"></i>Harga: <span>RP. 13.000</span></li>
-            </ul>
-            <p class="card-text mb-5">Kopi Nikmat Yang Menemanimu Dikala Hujan.</p>
-
-            <!-- Quantity Section -->
-            <div class="quantity-section">
-                <button id="kopiaren-decrement" class="btn btn-quantity">-</button>
-                <span id="kopiaren-quantity" class="quantity">1</span>
-                <button id="kopiaren-increment" class="btn btn-quantity">+</button>
-                <span id="kopiaren-price" class="hidden" data-price="13.000"></span>
-                <span id="kopiaren-total" class="total">Total: RP. 13.000</span>
+        <div class="columns is-multiline is-justify-content-center">
+            <!-- Product 1 -->
+            <div class="column is-4-desktop is-6-tablet">
+                <div class="cause-item">
+                    <img src="images/product/kopiaren.webp" class="w-100" alt="...">
+                    <div class="card-body">
+                        <h3 class="mb-4">Kopi Aren</h3>
+                        <ul class="list-inline border-bottom border-top py-3 mb-4">
+                            <li class="list-inline-item"><i class="icofont-check text-color mr-2"></i>Harga:<span id="harga1">13000</span></li>
+                        </ul>
+                        <p class="card-text mb-5">Kopi Nikmat Yang Menemanimu Dikala Hujan.</p>
+                        <div class="quantity-container mb-3">
+                            <button class="quantity-btn" onclick="changeQuantity('harga1', 1)">+</button>
+                            <span id="quantity1">1</span>
+                            <button class="quantity-btn" onclick="changeQuantity('harga1', -1)">-</button>
+                        </div>
+                        <p class="total-price">Total: <span id="total1">13000</span></p>
+                        <button class="btn btn-main is-rounded" onclick="buyNow('Kopi Aren', 'harga1', 'total1')">Buy Now</button>
+                    </div>
+                </div>
             </div>
 
-            <button id="kopiaren-buy-now" class="btn btn-main is-rounded">Beli Sekarang</button>
+            <!-- Product 2 -->
+            <div class="column is-4-desktop is-6-tablet">
+                <div class="cause-item">
+                    <img src="images/product/kopiespresso.webp" class="w-100" alt="...">
+                    <div class="card-body">
+                        <h3 class="mb-4">Kopi Espresso One Shot</h3>
+                        <ul class="list-inline border-bottom border-top py-3 mb-4">
+                            <li class="list-inline-item"><i class="icofont-check text-color mr-2"></i>Harga:<span id="harga2">10000</span></li>
+                        </ul>
+                        <p class="card-text mb-5">Kopi Nikmat Yang Membuat Badan Bergoyang.</p>
+                        <div class="quantity-container mb-3">
+                            <button class="quantity-btn" onclick="changeQuantity('harga2', 1)">+</button>
+                            <span id="quantity2">1</span>
+                            <button class="quantity-btn" onclick="changeQuantity('harga2', -1)">-</button>
+                        </div>
+                        <p class="total-price">Total: <span id="total2">10000</span></p>
+                        <button class="btn btn-main is-rounded" onclick="buyNow('Kopi Espresso One Shot', 'harga2', 'total2')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="column is-4-desktop is-6-tablet">
+                <div class="cause-item">
+                    <img src="images/product/kopiamericano.jpeg" class="w-100" alt="...">
+                    <div class="card-body">
+                        <h3 class="mb-4">Kopi Americano</h3>
+                        <ul class="list-inline border-bottom border-top py-3 mb-4">
+                            <li class="list-inline-item"><i class="icofont-check text-color mr-2"></i>Harga:<span id="harga3">12000</span></li>
+                        </ul>
+                        <p class="card-text mb-5">Kopi Nikmat Yang Menemani Bergadangmu.</p>
+                        <div class="quantity-container mb-3">
+                            <button class="quantity-btn" onclick="changeQuantity('harga3', 1)">+</button>
+                            <span id="quantity3">1</span>
+                            <button class="quantity-btn" onclick="changeQuantity('harga3', -1)">-</button>
+                        </div>
+                        <p class="total-price">Total: <span id="total3">12000</span></p>
+                        <button class="btn btn-main is-rounded" onclick="buyNow('Kopi Americano', 'harga3', 'total3')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-			<!-- CARD Kopi Americano -->
-			<div class="column is-4-desktop is-6-tablet">
-				<div class="cause-item">
-					<img src="images/product/kopiamericano.jpeg" class="w-100" alt="...">
-
-					<div class="card-body">
-						<h3 class="mb-4"><a href="cause-single.html">Kopi Americano </a></h3>
-
-						<ul class="list-inline border-bottom border-top py-3 mb-4">
-							<li class="list-inline-item"><i class="icofont-check text-color mr-2"></i>Harga: <span>RP. 12.000</span></li>
-						</ul>
-						<p class="card-text mb-5">Kopi Nikmat Yang Menemani Bergadangmu.</p>
-
-						<!-- Quantity Section -->
-						<div class="quantity-section">
-							<button id="kopiamericano-decrement" class="btn btn-quantity">-</button>
-							<span id="kopiamericano-quantity" class="quantity">1</span>
-							<button id="kopiamericano-increment" class="btn btn-quantity">+</button>
-							<span id="kopiamericano-price" class="hidden" data-price="12.000"></span>
-							<span id="kopiamericano-total" class="total">Total: RP. 12.000</span>
-						</div>
-
-						<button id="kopiamericano-buy-now" class="btn btn-main is-rounded">Beli Sekarang</button>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
 </section>
 <center>
 <div class="column is-6-desktop">
@@ -363,7 +345,42 @@
 <!-- Add the smooth scroll script -->
 
     <script src="js/script.js" type="module"></script>
-	<script src="js/scripta.js" type="module"></script>
+	<!-- <script src="js/scripta.js" type="module"></script> -->
+	<script>
+		function changeQuantity(id, change) {
+			var quantityElement = document.getElementById('quantity' + id.charAt(id.length - 1));
+			var hargaElement = document.getElementById(id);
+			var totalElement = document.getElementById('total' + id.charAt(id.length - 1));
+	
+			var quantity = parseInt(quantityElement.innerText) + change;
+	
+			if (quantity >= 1) {
+				quantityElement.innerText = quantity;
+				totalElement.innerText = parseInt(hargaElement.innerText) * quantity;
+			}
+		}
+	
+		function buyNow(productName, hargaId, totalId) {
+			var hargaElement = document.getElementById(hargaId);
+			var totalElement = document.getElementById(totalId);
+			
+			var price = parseInt(hargaElement.innerText);
+			var quantity = parseInt(document.getElementById('quantity' + totalId.charAt(totalId.length - 1)).innerText);
+			var total = price * quantity;
+	
+			// Store product data in localStorage
+			var productData = {
+				name: productName,
+				price: price,
+				quantity: quantity,
+				total: total
+			};
+			localStorage.setItem('selectedProduct', JSON.stringify(productData));
+	
+			// Redirect to checkout page
+			window.location.href = "checkout.html";
+		}
+	</script>
 	<script src="js/scriptapi.js" type="module"></script>
   </body>
   </html>

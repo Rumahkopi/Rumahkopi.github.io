@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <!-- Add your stylesheets and other head elements here -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .section {
+            padding: 40px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .cause-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<section class="section causes">
+    <div class="container">
+        <div class="columns is-justify-content-center">
+            <div class="column is-7-desktop is-8-tablet">
+                <div class="section-title has-text-centered">
+                    <span class="text-color">Checkout</span>
+                    <!-- Add any other checkout-related title or information here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Checkout Form -->
+        <form id="checkoutForm">
+            <!-- Display product information -->
+            <div class="columns is-multiline is-justify-content-center">
+                <div class="column is-4-desktop is-6-tablet">
+                    <div class="cause-item">
+                        <div class="card-body">
+                            <h3 class="mb-4">Product Details</h3>
+                            <label for="productName">Product Name:</label>
+                            <input type="text" id="productName" name="productName" readonly>
+                            
+                            <label for="productPrice">Price:</label>
+                            <input type="text" id="productPrice" name="productPrice" readonly>
+                            
+                            <label for="productQuantity">Quantity:</label>
+                            <input type="text" id="productQuantity" name="productQuantity" readonly>
+                            
+                            <label for="productTotal">Total:</label>
+                            <input type="text" id="productTotal" name="productTotal" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form inputs for additional checkout details -->
+            <div class="columns is-multiline is-justify-content-center">
+                <div class="column is-4-desktop is-6-tablet">
+                    <div class="cause-item">
+                        <div class="card-body">
+                            <h3 class="mb-4">Customer Information</h3>
+                            <label for="customerName">Your Name:</label>
+                            <input type="text" id="customerName" name="customerName" required>
+                            
+                            <label for="customerEmail">Your Email:</label>
+                            <input type="email" id="customerEmail" name="customerEmail" required>
+                            
+                            <label for="customerAddress">Your Address:</label>
+                            <textarea id="customerAddress" name="customerAddress" rows="4" required></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-main is-rounded">Confirm Purchase</button>
+        </form>
+    </div>
+</section>
+
+<script>
+    // Retrieve selected product data from localStorage
+    var selectedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
+
+    // Display product information on the checkout page
+    document.getElementById('productName').value = selectedProduct.name;
+    document.getElementById('productPrice').value = selectedProduct.price;
+    document.getElementById('productQuantity').value = selectedProduct.quantity;
+    document.getElementById('productTotal').value = selectedProduct.total;
+</script>
+
+</body>
+</html>

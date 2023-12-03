@@ -1167,36 +1167,36 @@ ul.list-styled {
   bottom: 0px;
 }
 
-.donation-wrap {
+.chekout-wrap {
   background: #eaeaea;
   padding: 50px 35px;
 }
 @media (max-width: 575px) {
-  .donation-wrap {
+  .chekout-wrap {
     padding: 40px 20px;
   }
 }
 
-.donation .donation-form .col-form-label {
+.chekout .chekout-form .col-form-label {
   font-weight: 700;
 }
-.donation .donation-form .form-check {
+.chekout .chekout-form .form-check {
   margin-bottom: 15px;
 }
-.donation .donation-form .input {
+.chekout .chekout-form .input {
   height: 50px;
   border: 1px solid transparent;
 }
-.donation .donation-form .input:focus {
+.chekout .chekout-form .input:focus {
   border-color: #f89d35;
 }
-.donation .donation-form .form-group {
+.chekout .chekout-form .form-group {
   margin-bottom: 25px;
 }
-.donation .offline-donation ul li {
+.chekout .offline-chekout ul li {
   margin: 15px 0px;
 }
-.donation .offline-donation ul address, .donation .offline-donation ul span {
+.chekout .offline-chekout ul address, .chekout .offline-chekout ul span {
   font-weight: 700;
 }
 
