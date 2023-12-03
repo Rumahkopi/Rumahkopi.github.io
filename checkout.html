@@ -11,6 +11,10 @@
     
 </head>
 <body>
+<div id="loader-wrapper">
+		<div id="loader"></div>
+		<div id="loading-text">. Sabar CUYY!</div>
+</div>
 <section class="section causes">
     <div class="container">
         <div class="columns is-justify-content-center">
@@ -22,7 +26,7 @@
             </div>
         </div>
         <!-- Checkout Form -->
-        <form id="checkoutForm">
+        <form id="checkoutForm" method="post">
             <!-- Display product information -->
             <div class="columns is-multiline is-justify-content-center">
                 <div class="column is-4-desktop is-6-tablet">
@@ -51,15 +55,18 @@
                         <div class="card-body">
                             <h3 class="title">Customer Information</h3>
                             <label for="label">Your Name :</label>
-                            <input class="input is-small" id="customerName" type="text" required name="customerName">
+                            <input class="input is-small" id="namapembeli" type="text" required name="customerName">
                             
                             <label for="customerEmail">Your Email :</label>
-                            <input class="input is-small" type="email" id="customerEmail" name="customerEmail" required>
+                            <input class="input is-small" type="email" id="email" name="customerEmail" required>
                             
                             <label for="customerAddress">Your Address :</label>
-                            <textarea class="textarea" id="customerAddress" name="customerAddress" rows="4" required></textarea>
+                            <textarea class="textarea" id="alamat" name="customerAddress" rows="4" required></textarea>
+
+                            <label for="customerEmail">No Hp :</label>
+                            <input class="input is-small" type="text" id="nohp" name="customerEmail" required>
                             <hr>
-                            <button type="submit">Confirm Purchase</button>
+                            <button type="submit" id="submit">Confirm Purchase</button>
                         </div>
                     </div>
                 </div>
@@ -69,6 +76,7 @@
 </section>
 
 <script src="js/scriptb.js" type="module"></script>
+<script type="module" src="js/inserttransaksi.js"></script>
 
 </body>
 </html>
