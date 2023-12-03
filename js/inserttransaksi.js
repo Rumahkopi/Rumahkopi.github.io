@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
             title: "Success Silahkan lanjutkan",
             text: result.message,
         }).then(() => {
-            window.location.href = "index.html";
+            window.location.href = "https://wa.me/62895326369830?text=Bayar";
         });
     } else {
         Swal.fire({
