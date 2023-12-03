@@ -28,6 +28,5 @@ function buyNow(productName, hargaId, totalId) {
     };
     localStorage.setItem('selectedProduct', JSON.stringify(productData));
 
-    // Redirect to checkout page
     window.location.href = "checkout.html";
 }

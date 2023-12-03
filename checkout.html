@@ -5,69 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <!-- Add your stylesheets and other head elements here -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .section {
-            padding: 40px 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            margin-bottom: 20px;
-            font-size: 24px;
-            color: #333;
-        }
-
-        .cause-item {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            box-sizing: border-box;
-        }
-
-        button {
-            background-color: #007BFF;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styleb.css">
 </head>
 <body>
 
@@ -130,16 +68,7 @@
     </div>
 </section>
 
-<script>
-    // Retrieve selected product data from localStorage
-    var selectedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
-
-    // Display product information on the checkout page
-    document.getElementById('productName').value = selectedProduct.name;
-    document.getElementById('productPrice').value = selectedProduct.price;
-    document.getElementById('productQuantity').value = selectedProduct.quantity;
-    document.getElementById('productTotal').value = selectedProduct.total;
-</script>
+<script src="js/scriptb.js" type="module"></script>
 
 </body>
 </html>
