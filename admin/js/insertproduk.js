@@ -29,9 +29,26 @@ document.addEventListener("DOMContentLoaded", function() {
         return data
     }
     
-    export function ResponsePost(result) {
-        AlertPost(result);
+    export function ResponsePost (result) {
+      if (result.status === true) {
+        Swal.fire({
+            icon: "success",
+            title: "Insert Successful",
+            text: result.message,
+        }).then(() => {
+            window.location.href = "/admin/page/forms.html";
+        });
+    } else {
+        Swal.fire({
+            icon: "error",
+            title: "Insert Failed",
+            text: result.message,
+        });
     }
+}
+
+
+    
   // Menghilangkan overlay saat halaman selesai dimuat
   document.onreadystatechange = function () {
     if (document.readyState === 'complete') {
@@ -40,3 +57,4 @@ document.addEventListener("DOMContentLoaded", function() {
       }, 2000); // Sesuaikan timeout dengan durasi animasi CSS
     }
   };
+
