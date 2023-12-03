@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (result.status === true) {
         Swal.fire({
             icon: "success",
-            title: "Successful",
+            title: "Success Silahkan lanjutkan",
             text: result.message,
         }).then(() => {
             window.location.href = "index.html";
