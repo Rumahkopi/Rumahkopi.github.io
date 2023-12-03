@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
             title: "Insert Successful",
             text: result.message,
         }).then(() => {
-            window.location.href = "/admin/page/forms.html";
+            window.location.href = "/admin/page/tables.html";
         });
     } else {
         Swal.fire({
@@ -47,8 +47,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 }
 
-
-    
   // Menghilangkan overlay saat halaman selesai dimuat
   document.onreadystatechange = function () {
     if (document.readyState === 'complete') {
