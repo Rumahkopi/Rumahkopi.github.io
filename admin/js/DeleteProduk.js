@@ -6,7 +6,7 @@ const deleteProduk = async (IDHAPUS) => {
 
 
   const isConfirmed = await Swal.fire({
-    title: "Benarkah anda ingin menghapus data ini?",
+    title: "Apakah Anda ingin Menghapus Data Ini?",
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#3085d6",

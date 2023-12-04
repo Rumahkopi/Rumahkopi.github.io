@@ -14316,7 +14316,7 @@ footer.footer .logo img {
 
   #loader {
     border: 8px solid #f3f3f3; /* Light grey */
-    border-top: 8px solid #3498db; /* Blue */
+    border-top: 8px solid #000; /* Blue */
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -14327,14 +14327,3 @@ footer.footer .logo img {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
-      /* Gaya untuk menengahkan card */
-      #editCard {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        max-width: 400px;
-        width: 100%;
-        z-index: 1000;
-      }
