@@ -18,19 +18,11 @@ function responseData(result) {
     if (result.status === true) {
         setCookieWithExpireHour("token", result.token, 2);
 
-          // Menghilangkan overlay saat halaman selesai dimuat
-  document.onreadystatechange = function () {
-    if (document.readyState === 'complete') {
-      setTimeout(function () {
-        document.getElementById('loader-wrapper').style.display = 'none';
-      }, 2000); // Sesuaikan timeout dengan durasi animasi CSS
-    }
-  };
-  
         Swal.fire({
           icon: "success",
           title: "Login Successful",
           text: result.message,
+          showConfirmButton: false,
         }).then(() => {
             window.location.href = "../admin/page/index.html";
         });
