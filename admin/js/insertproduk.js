@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
             icon: "success",
             title: "Insert Successful",
             text: result.message,
+            confirmButtonColor : "#0000",
         }).then(() => {
             window.location.href = "/admin/page/tables.html";
         });
