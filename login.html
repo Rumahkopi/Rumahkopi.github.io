@@ -11,23 +11,7 @@
   <link rel="stylesheet" type="text/css" href="./css/loginreg.css">
   <link rel="shortcut icon" type="image/x-icon" href="./images/logo2.png" />
   <script src="https://kit.fontawesome.com/15181efa86.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/gh/angkringankuy/crotyajs@0.0.5/auth.js"></script>
-
-<link rel="stylesheet" href="css/stylelogin.css">
-
-  <!-- <script>
-    function checkPageExists() {
-        var requestedPage = location.pathname; 
-        var validPages = ["/", "index", "/index" , "/index.html" , "index.html"]; 
-
-        if (!validPages.includes(requestedPage)) {
-          
-            window.location.href = '/404.html';
-        }
-    }
-
-    window.addEventListener('load', checkPageExists);
-</script> -->
+  <link rel="stylesheet" href="css/stylelogin.css">
 </head>
 
 <body>
@@ -42,7 +26,6 @@
           <div class="column left">
             <h1 class="title is-1">Rumah Kopi</h1>
             <h2 class="subtitle colored is-4">Yooo Mari Merapat.</h2>
-            <p>Tersedia Minuman Yang Murah Buat Menemani Kegalauan Kalian Semua.</p>
           </div>
           <div class="column right has-text-centered">
             <div id="loading-overlay" class="loading-overlay">
@@ -53,13 +36,13 @@
         <div class="field">
           <div class="control">
             <input class="input is-medium" type="text" autocomplete="username"
-              id="username" value="admin" required />
+              id="username" required />
           </div>
         </div>
         <div class="field">
           <div class="control">
             <input class="input is-medium" type="password" placeholder="**"
-              autocomplete="current-password" id="password" value="adminkopi" required />
+              autocomplete="current-password" id="password" required />
           </div>
         </div>
         <br />
@@ -68,18 +51,11 @@
           Sign In
         </button>
         <br />
-        <div class="level-item has-text-centered">
-          <a href="signup.html"><em>Ga Ada Akun? Daftar Dulu</em></a>
-        </div>
-        <br />
-              <small><em>Enjoy Order Minumannya.</em></small>
               </form>
               <div class="notification is-white" id="pesan"></div>
-
             </div>
           </div>
         </div>
-
           <div class="column is-8 is-offset-2">
             <br>
             <nav class="level">
