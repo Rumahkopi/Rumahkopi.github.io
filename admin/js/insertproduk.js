@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function() {
             text: result.message,
             showConfirmButton: false,
             timer : 1000,
-            show
         }).then(() => {
             window.location.href = "/admin/page/tables.html";
         });
