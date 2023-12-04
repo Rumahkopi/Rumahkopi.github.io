@@ -15,57 +15,6 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <div id="editCard" class="card has-table" style="display: none;">
-    <div class="card-content">
-      <div class="content">
-        <form id="editForm">
-          <!-- Form input 1 -->
-          <div class="field">
-            <label class="label">nama</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="nama" id="input1">
-            </div>
-          </div>
-  
-          <!-- Form input 2 -->
-          <div class="field">
-            <label class="label">harga</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="harga" id="input2">
-            </div>
-          </div>
-            <!-- Form input 3 -->
-            <div class="field">
-              <label class="label">Deskripsi</label>
-              <div class="control">
-                <textarea class="textarea" placeholder="Deskripsi" id="textarea"></textarea>
-              </div>
-            </div>
-           <!-- Form input z -->
-           <div class="field">
-            <label class="label">stok</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="stok" id="input2">
-            </div>
-          </div>         
-  
-          <!-- Buttons -->
-          <div class="field is-grouped">
-            <div class="control">
-              <button type="button" class="button is-primary" onclick="saveChanges()">Save Changes</button>
-            </div>
-            <div class="control">
-              <a class="button is-link" onclick="cancelEdit()" href="https://rumahkopi.github.io/admin/page/tables.html">Cancel</a>
-            </div>
-            <div class="control">
-              <button type="button" class="button is-danger" onclick="deleteItem()">Delete</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  
   <div id="loader-wrapper">
 		<div id="loader"></div>
 		<div id="loading-text">. Sabar CUYY!</div>
@@ -168,59 +117,99 @@
       </div>
     </div>
   </section>
-  <section class="hero is-hero-bar">
-    <div class="hero-body">
-      <div class="level">
-        <div class="level-left">
-          <div class="level-item"><h1 class="title">
-            Responsive Tables
-          </h1></div>
-        </div>
-        <div class="level-right" style="display: none;">
-          <div class="level-item"></div>
+  <section class="hero is-fullheight">
+    <div class="hero-head">
+      <div class="container">
+        <br>
+        <br>
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title">
+              <span class="icon"><i class="mdi mdi-ballot"></i></span>
+              Update Task
+            </p>
+          </header>
+          <div class="card-content">
+            <form method="post">
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <label class="label">Nama</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <p class="control is-expanded">
+                      <input id="nama" class="input" type="text" placeholder="Masukkan Nama Produk">
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <label class="label">Harga</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <input id="harga" class="input" placeholder="Masukkan Harga Produk"></input>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <label class="label">Deskripsi</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <textarea id="deskripsi" class="textarea" placeholder="Masukkan Deskripsi Produk"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <label class="label">Stok</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <input id="stok" class="input" placeholder="Masukkan Stok Produk"></input>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="field is-horizontal">
+                <div class="field-label">
+                  <!-- Left empty for spacing -->
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="field is-grouped">
+                      <div class="control">
+                        <button type="button" class="button is-dark" id="btnUpdate">
+                          <span>Update</span>
+                        </button>
+                      </div>
+                      <div class="control">
+                        <a href="tables.html" type="button" class="button is-dark is-outlined">
+                          <span>Kembali</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="section is-main-section">
-    <div class="card has-table">
-      <header class="card-header">
-        <p class="card-header-title">
-          <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
-          Produk
-        </p>
-        <a href="#" class="card-header-icon">
-          <span class="icon is-primary"><i class="mdi mdi-eye"></i></span>
-        </a>
-        <a href="forms.html" class="card-header-icon">
-          <span class="icon"><i class="mdi mdi-upload"></i></span>
-        </a>
-        <a href="#" class="card-header-icon">
-          <span class="icon"><i class="mdi mdi-reload"></i></span>
-        </a>
-      </header>
-      <div class="card-content">
-        <div class="b-table has-pagination">
-          <div class="table-wrapper has-mobile-cards">
-            <table class="table is-fullwidth is-striped is-hoverable is-fullwidth">
-              <tbody id="produk">
-              <tr>
-                <th>
-                  <label class="checkbox">
-                    <input class="checkbox" type="checkbox">
-                  </label>
-                </th>
-                <th>Name</th>
-                <th>Harga</th>
-                <th>Deskripsi</th>
-                <th>Stok</th>
-              </tr>
-              <tr>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-  </section>
+
 
   <footer class="footer">
     <div class="container-fluid">
@@ -247,10 +236,11 @@
   </footer>
 
 <!-- Scripts below are for demo only -->
-<!-- <script type="module" src="https://cdn.jsdelivr.net/gh/Rumahkopi/js@0.0.2/jsadmin/get.js"></script> -->
+<!-- <script type="module" src="https://cdn.jsdelivr.net/gh/Rumahkopi/js@0.0.2/jsadmin/get.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/gh/Rumahkopi/js@0.0.2/jsadmin/logout.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/gh/Rumahkopi/js@0.0.2/jsadmin/main.js"></script>
-<script type="module" src="../js/get.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/gh/Rumahkopi/js@0.0.2/jsadmin/main.js"></script> -->
+<script type="module" src="../js/EditProduk.js"></script>
+<script type="module" src="../js/fetchEditProduk.js"></script>
 
 <!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
 <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">

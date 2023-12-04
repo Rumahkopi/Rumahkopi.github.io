@@ -5,15 +5,20 @@ export let URLDataProduk = "https://asia-southeast2-msyahid.cloudfunctions.net/G
 export let tableTag="tr";
 export let tableRowClass="content is-size-6";
 export let tableTemplate=`
-<td>                
-<label class="checkbox">
-  <input  class="checkbox" type="checkbox">
-</label>
-</td>
 <td data-label="Name">#NAMA#</td>
 <td data-label="Harga">#HARGA#</td>
 <td data-label="Deskripsi">#DESKRIPSI#</td>
 <td data-label="Stok">#STOK#</td>
+<td>
+<div class="buttons is-right">
+  <a href="edit.html?_id=#IDEDIT#" class="button is-primary jb-modal" data-produk-id="#IDHAPUS#" data-target="edit-modal" type="button">
+    <span class="icon"><i class="mdi mdi-eye-circle"></i></span>
+  </a>
+  <button class="button is-danger" type="button" onclick="deleteProduk('#DELETE#')">
+    <span class="icon"><i class="mdi mdi-delete-circle"></i></span>
+  </button>
+</div>
+</td>
 ` 
 
 export function responseData(results){
@@ -22,25 +27,7 @@ export function responseData(results){
 }
 
 export function isiRow(value){
-    let content=tableTemplate.replace("#NAMA#",value.nama).replace("#HARGA#",value.harga).replace("#DESKRIPSI#",value.deskripsi).replace("#STOK#",value.stok);
+    let content=tableTemplate.replace("#NAMA#",value.nama).replace("#HARGA#",value.harga).replace("#DESKRIPSI#",value.deskripsi).replace("#STOK#",value.stok).replace("#IDEDIT#",value._id).replace("#DELETE#",value._id).replace("#IDHAPUS#",value._id);
     console.log(content);
     addChild("produk",tableTag,tableRowClass,content);
 }
-
-/* Modal: open */
-Array.from(document.getElementsByClassName('jb-modal')).forEach(el => {
-    el.addEventListener('click', e => {
-      const modalTarget = e.currentTarget.getAttribute('data-target')
-  
-      document.getElementById(modalTarget).classList.add('is-active')
-      document.documentElement.classList.add('is-clipped')
-    })
-  });
-  
-  /* Modal: close */
-  Array.from(document.getElementsByClassName('jb-modal-close')).forEach(el => {
-    el.addEventListener('click', e => {
-      e.currentTarget.closest('.modal').classList.remove('is-active')
-      document.documentElement.classList.remove('is-clipped')
-    })
-  })
