@@ -19,7 +19,7 @@ const deleteProduk = async (IDHAPUS) => {
     console.log("Confirmed:", isConfirmed.isConfirmed);
 
     const target_url =
-      "https://asia-southeast2-mytodolist-402507.cloudfunctions.net/mytodolist_deleteTodo?nama=" + nama;
+      "https://asia-southeast2-msyahid.cloudfunctions.net/DeleteDataProduk?nama=" + nama;
 
     try {
       const response = await fetch(target_url, {
