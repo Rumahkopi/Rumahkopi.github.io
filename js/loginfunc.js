@@ -23,6 +23,7 @@ function responseData(result) {
           title: "Login Successful",
           text: result.message,
           showConfirmButton: false,
+          timer : 1000,
         }).then(() => {
             window.location.href = "../admin/page/index.html";
         });
