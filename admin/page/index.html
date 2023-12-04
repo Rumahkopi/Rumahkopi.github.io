@@ -146,43 +146,21 @@
         <div class="b-table has-pagination">
           <div class="table-wrapper has-mobile-cards">
             <table class="table is-fullwidth is-striped is-hoverable is-sortable is-fullwidth">
-              <thead>
-              <tr>
-                <th></th>
-                <th>Name</th>
-                <th>Produk</th>
-                <th>Alamat</th>
-                <th>Harga</th>
-                <th>Pembelian</th>
-                <th></th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td class="is-image-cell">
-                  <div class="image">
-                    <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg" class="is-rounded">
-                  </div>
-                </td>
-                <td data-label="Name">Syahid</td>
-                <td data-label="Produk">Kopi Areng</td>
-                <td data-label="Alamat">Bandung</td>
-                <td data-label="Harga">Rp. 12.000</td>
-                <td data-label="Created">
-                  <small class="has-text-grey is-abbr-like" title="Oct 25, 2020">27 November 2023</small>
-                </td>
-                <td class="is-actions-cell">
-                  <div class="buttons is-right">
-                    <button class="button is-small is-primary" type="button">
-                      <span class="icon"><i class="mdi mdi-eye"></i></span>
-                    </button>
-                    <button class="button is-small is-danger jb-modal" data-target="sample-modal" type="button">
-                      <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                    </button>
-                  </div>
-                </td>
-              </tr>
-              </tbody>
+              <tbody id="transaksi">
+                <tr>
+                  <th>Pembeli</th>
+                  <th>Email</th>
+                  <th>Produk</th>
+                  <th>Harga</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                  <th>Alamat</th>
+                  <th>No.HP</th>
+                </tr>
+                
+                <tr>
+                </tr>
+                </tbody>
             </table>
           </div>
           <!-- <div class="notification">
@@ -256,6 +234,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 <script type="text/javascript" src="../js/chart.sample.min.js"></script>
 <script type="module" src="../js/logout.js"></script>
+<script type="module" src="../js/gettransaksi.js"></script>
 
 <!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
 <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
