@@ -1,9 +1,9 @@
 export const isiData = (results) => {
     const dataProduk = [
-      {id: "nama", path: "nama"},
-      {id: "harga", path: "harga"},
-      {id: "deskripsi", path: "deskripsi"},
-      {id: "stok", path: "stok"},
+      {id: "nama", path: "data.0.nama"},
+      {id: "harga", path: "data.0.harga"},
+      {id: "deskripsi", path: "data.0.deskripsi"},
+      {id: "stok", path: "data.0.stok"},
     ];
   
     console.log("isiData - Input:", results);
