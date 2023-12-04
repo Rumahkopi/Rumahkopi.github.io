@@ -32,7 +32,9 @@ function responseData(result) {
         Swal.fire({
           icon: "error",
           title: "Login Failed",
-          text: result.message,
+          text: result.message,         
+          showConfirmButton: false,
+          timer : 1000,
         });
     }
 };

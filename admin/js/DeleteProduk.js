@@ -33,6 +33,7 @@ const deleteProduk = async (IDHAPUS) => {
           icon: "success",
           title: "Data berhasil dihapus",
           showConfirmButton: false,
+          timer : 1000,
         });
         location.reload();
       } else {

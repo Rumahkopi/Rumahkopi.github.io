@@ -35,7 +35,10 @@ document.addEventListener("DOMContentLoaded", function() {
             icon: "success",
             title: "Insert Successful",
             text: result.message,
-            ButtonColor : "#0000",
+            confirmButtonColor : "#000",
+            showConfirmButton: false,
+            timer : 1000,
+            show
         }).then(() => {
             window.location.href = "/admin/page/tables.html";
         });
@@ -44,6 +47,8 @@ document.addEventListener("DOMContentLoaded", function() {
             icon: "error",
             title: "Insert Failed",
             text: result.message,
+            showConfirmButton: false,
+            timer : 1000,
         });
     }
 }

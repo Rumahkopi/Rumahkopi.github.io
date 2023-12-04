@@ -21,6 +21,8 @@ const responseData = (result) => {
             icon: "success",
             title: "Update Successful",
             text: result.message,
+            showConfirmButton: false,
+            timer : 1000,
         }).then(() => {
             window.location.href = "tables.html";
         });
@@ -29,6 +31,8 @@ const responseData = (result) => {
             icon: "error",
             title: "Update Failed",
             text: result.message,
+            showConfirmButton: false,
+            timer : 1000,
         });
     }
 }
