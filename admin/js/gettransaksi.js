@@ -3,7 +3,6 @@ import {setInner,addChild } from "https://jscroot.github.io/element/croot.js";
 import {URLDataTransaksi,responseData} from "./gettransaksifunc.js";
 
 
-get(URLDataProduk,responseData);
 get(URLDataTransaksi,responseData);
 
   // Menghilangkan overlay saat halaman selesai dimuat
@@ -14,4 +13,3 @@ get(URLDataTransaksi,responseData);
       }, 2000); // Sesuaikan timeout dengan durasi animasi CSS
     }
   };
-  
