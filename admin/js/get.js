@@ -1,8 +1,11 @@
 import { get } from "https://jscroot.github.io/api/croot.js";
 import {setInner,addChild } from "https://jscroot.github.io/element/croot.js";
-import {URLGeoJson,responseData} from "./getfunc.js";
+import {URLDataProduk,responseData} from "./getfunc.js";
+import {URLDataTransaksi,responseData} from "./gettransaksifunc.js";
 
-get(URLGeoJson,responseData);
+
+get(URLDataProduk,responseData);
+get(URLDataTransaksi,responseData);
 
   // Menghilangkan overlay saat halaman selesai dimuat
   document.onreadystatechange = function () {
