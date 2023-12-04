@@ -1,8 +1,8 @@
 const deleteProduk = async (IDHAPUS) => {
-  const nama = IDHAPUS;
+  const _id = IDHAPUS;
 
-  console.log("ProdukID:", nama);
-  console.log("nama:", IDHAPUS);
+  console.log("ProdukID:", _id);
+  console.log("_id:", IDHAPUS);
 
 
   const isConfirmed = await Swal.fire({
