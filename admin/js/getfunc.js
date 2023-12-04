@@ -27,7 +27,7 @@ export function responseData(results){
 }
 
 export function isiRow(value){
-    let content=tableTemplate.replace("#NAMA#",value.nama).replace("#HARGA#",value.harga).replace("#DESKRIPSI#",value.deskripsi).replace("#STOK#",value.stok).replace("#IDEDIT#",value._id).replace("#DELETE#",value._id).replace("#IDHAPUS#",value._id);
+    let content=tableTemplate.replace("#NAMA#",value.nama).replace("#HARGA#",value.harga).replace("#DESKRIPSI#",value.deskripsi).replace("#STOK#",value.stok).replace("#IDEDIT#",value._id).replace("#DELETE#",value._id).replace("#IDHAPUS#",value.nama);
     console.log(content);
     addChild("produk",tableTag,tableRowClass,content);
 }
