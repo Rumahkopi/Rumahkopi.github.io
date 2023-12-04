@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     export function ResponsePost (result) {
+        console.log(result,result.status)
       if (result.status === true) {
         Swal.fire({
             icon: "success",
