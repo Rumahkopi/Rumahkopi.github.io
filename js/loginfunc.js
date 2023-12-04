@@ -15,17 +15,22 @@ export default function PostSignUp(){
 
 }
 function responseData(result) {
-    setInner("pesan", result.message);
-    setCookieWithExpireHour("token", result.token, 2);
-    
-    if (result.message === "Selamat Datang") {
-        // Jika pesan adalah "Selamat Datang", arahkan ke halaman dashboard.
-        window.location.href = "../admin/page/index.html"; // Gantilah "error.html" dengan halaman error yang sesuai.
-    } else if (result.message === "Password Salah") {
-        // Jika pesan kesalahan adalah "Password salah", arahkan ke halaman error.
-        window.location.href = "404.html";
+    if (result.status === true) {
+        setCookieWithExpireHour("token", result.token, 2);
+
+        Swal.fire({
+          icon: "success",
+          title: "Login Successful",
+          text: result.message,
+        }).then(() => {
+            window.location.href = "../admin/page/index.html";
+        });
+
     } else {
-        // Penanganan lainnya (pesan kesalahan lainnya)
-        window.location.href = "login.html";
+        Swal.fire({
+          icon: "error",
+          title: "Login Failed",
+          text: result.message,
+        });
     }
-}
+};
