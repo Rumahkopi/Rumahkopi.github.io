@@ -1,4 +1,3 @@
-import { get } from "https://jscroot.github.io/api/croot.js";
 import {setInner,addChild } from "https://jscroot.github.io/element/croot.js";
 
 export let URLDataProduk = "https://asia-southeast2-msyahid.cloudfunctions.net/GetDataProduk";
@@ -23,11 +22,18 @@ export let tableTemplate=`
 
 export function responseData(results){
     console.log(results);
-    results.forEach(isiRow);
+    results.reverse().forEach(isiRow);
 }
 
 export function isiRow(value){
-    let content=tableTemplate.replace("#NAMA#",value.nama).replace("#HARGA#",value.harga).replace("#DESKRIPSI#",value.deskripsi).replace("#STOK#",value.stok).replace("#IDEDIT#",value._id).replace("#DELETE#",value._id).replace("#IDHAPUS#",value._id);
+    let content=tableTemplate.replace("#NAMA#",value.nama)
+    .replace("#HARGA#",value.harga)
+    .replace("#DESKRIPSI#",value.deskripsi)
+    .replace("#STOK#",value.stok)
+    .replace("#IDEDIT#",value._id)
+    .replace("#DELETE#",value._id)
+    .replace("#IDHAPUS#",value._id);
+    
     console.log(content);
     addChild("produk",tableTag,tableRowClass,content);
 }
