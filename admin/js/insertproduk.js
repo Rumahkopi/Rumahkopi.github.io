@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function() {
             icon: "success",
             title: "Insert Successful",
             text: result.message,
-            confirmButtonColor : "#000",
             showConfirmButton: false,
             timer : 1000,
             show
