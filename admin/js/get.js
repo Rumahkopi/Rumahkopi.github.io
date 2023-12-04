@@ -4,7 +4,6 @@ import {URLDataProduk,responseData} from "./getfunc.js";
 
 
 get(URLDataProduk,responseData);
-get(URLDataTransaksi,responseData);
 
   // Menghilangkan overlay saat halaman selesai dimuat
   document.onreadystatechange = function () {
