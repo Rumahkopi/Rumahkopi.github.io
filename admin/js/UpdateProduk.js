@@ -15,6 +15,7 @@ const putData = (target_url, data, responseFunction) => {
 }
 
 const responseData = (result) => {
+    hideLoadingOverlay();
     console.log("Server Response:", result, result.status);
     if (result.status === true) {
         Swal.fire({
@@ -53,7 +54,7 @@ const updateProduk = () => {
     };
     
     putData(target_url, data, responseData);
-
+    showLoadingOverlay();
     console.log("Data:", data);
 };
 
@@ -67,3 +68,13 @@ btnUpdates.addEventListener("click", () => {
     console.log("button aktif");
     updateProduk(); // Call pushData function when the button is clicked
   });
+
+  function showLoadingOverlay() {
+    // Show loading overlay
+    document.getElementById('loader-wrapper').style.display = 'flex';
+  }
+  
+  function hideLoadingOverlay() {
+    // Hide loading overlay
+    document.getElementById('loader-wrapper').style.display = 'none';
+  }

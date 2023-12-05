@@ -2,12 +2,23 @@ import { postWithBearer } from "https://jscroot.github.io/api/croot.js";
 export let URLPost = `https://asia-southeast2-msyahid.cloudfunctions.net/InsertDataProduk`
 export let token = 'token';
 
+function showLoadingOverlay() {
+    // Show loading overlay
+    document.getElementById('loader-wrapper').style.display = 'flex';
+  }
+  
+  function hideLoadingOverlay() {
+    // Hide loading overlay
+    document.getElementById('loader-wrapper').style.display = 'none';
+  }
 
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.querySelector("form");
 
     form.addEventListener("submit", function(event) {
         event.preventDefault();
+        // Display loading overlay
+        showLoadingOverlay();
         let data = GetDataForm();
         postWithBearer(URLPost, token, data, ResponsePost)
     });
@@ -30,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     export function ResponsePost (result) {
+      hideLoadingOverlay();
       if (result.status === true) {
         Swal.fire({
             icon: "success",

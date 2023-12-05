@@ -1,12 +1,3 @@
-// Menghilangkan overlay saat halaman selesai dimuat
-document.onreadystatechange = function () {
-  if (document.readyState === 'complete') {
-  setTimeout(function () {
-    document.getElementById('loader-wrapper');
-  }, 2000); // Sesuaikan timeout dengan durasi animasi CSS
-  }
-};
-
 // JavaScript untuk responsif navbar
 document.addEventListener('DOMContentLoaded', function () {
   // Ambil elemen-elemen yang diperlukan
@@ -22,4 +13,13 @@ document.addEventListener('DOMContentLoaded', function () {
       navbarMenu.classList.toggle('is-active');
   });
 });
+
+  // Menghilangkan overlay saat halaman selesai dimuat
+  document.onreadystatechange = function () {
+    if (document.readyState === 'complete') {
+      setTimeout(function () {
+        document.getElementById('loader-wrapper').style.display = 'none';
+      }, 2000); // Sesuaikan timeout dengan durasi animasi CSS
+    }
+  };
 

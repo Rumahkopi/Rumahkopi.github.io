@@ -1,3 +1,13 @@
+function showLoadingOverlay() {
+  // Show loading overlay
+  document.getElementById('loader-wrapper').style.display = 'flex';
+}
+
+function hideLoadingOverlay() {
+  // Hide loading overlay
+  document.getElementById('loader-wrapper').style.display = 'none';
+}
+
 const deleteProduk = async (IDHAPUS) => {
   const _id = IDHAPUS;
 
@@ -16,6 +26,8 @@ const deleteProduk = async (IDHAPUS) => {
   });
 
   if (isConfirmed.isConfirmed) {
+     // Display loading overlay
+     showLoadingOverlay();
     console.log("Confirmed:", isConfirmed.isConfirmed);
 
     const target_url =
@@ -28,6 +40,7 @@ const deleteProduk = async (IDHAPUS) => {
       });
 
       if (response.ok) {
+        hideLoadingOverlay();
         console.log("Response:", response);
         await Swal.fire({
           icon: "success",
