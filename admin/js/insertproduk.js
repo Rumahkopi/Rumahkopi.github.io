@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function() {
         Swal.fire({
             icon: "success",
             title: "Insert Successful",
-            text: result.message,
             showConfirmButton: false,
             timer : 1000,
         }).then(() => {
@@ -58,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
             title: "Insert Failed",
             text: result.message,
             showConfirmButton: false,
-            timer : 1000,
+            timer : 2000,
         });
     }
 }

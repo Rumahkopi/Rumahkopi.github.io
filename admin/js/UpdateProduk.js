@@ -21,7 +21,6 @@ const responseData = (result) => {
         Swal.fire({
             icon: "success",
             title: "Update Successful",
-            text: result.message,
             showConfirmButton: false,
             timer : 1000,
         }).then(() => {

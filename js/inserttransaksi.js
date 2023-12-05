@@ -57,14 +57,14 @@ document.addEventListener("DOMContentLoaded", function() {
         Swal.fire({
             icon: "success",
             title: "Success Silahkan lanjutkan Pembayaran Melewati WhatsApp Ini.",
-            text: result.message,
+            confirmButtonColor: '#000',
         }).then(() => {
             window.location.href = "https://wa.me/62895326369830?text=Bayar";
         });
     } else {
         Swal.fire({
             icon: "error",
-            title: "Insert Failed",
+            title: "Gagal Coba Lagi",
             text: result.message,
         });
     }
