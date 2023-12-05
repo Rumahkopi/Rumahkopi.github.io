@@ -2,7 +2,7 @@ import { postWithToken } from "https://jscroot.github.io/api/croot.js";
 import { setInner, getValue } from "https://jscroot.github.io/element/croot.js";
 import { setCookieWithExpireHour } from "https://jscroot.github.io/cookie/croot.js";
 
-export default function PostSignUp() {
+export default function Login() {
   // Display loading overlay
   showLoadingOverlay();
 

