@@ -1,5 +1,6 @@
 import { postWithBearer } from "https://jscroot.github.io/api/croot.js";
-export let URLPost = `https://asia-southeast2-msyahid.cloudfunctions.net/InsertDataProduk`
+
+export let URLPost = `https://asia-southeast2-msyahid.cloudfunctions.net/InsertDataTransaksi`
 export let token = 'token';
 
 
@@ -8,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     form.addEventListener("submit", function(event) {
         event.preventDefault();
+         // Display loading overlay
+        showLoadingOverlay();
         let data = GetDataForm();
         postWithBearer(URLPost, token, data, ResponsePost)
     });
@@ -37,7 +40,18 @@ document.addEventListener("DOMContentLoaded", function() {
         return data
     }
     
+    function showLoadingOverlay() {
+        // Show loading overlay
+        document.getElementById('loader-wrapper').style.display = 'flex';
+      }
+      
+      function hideLoadingOverlay() {
+        // Hide loading overlay
+        document.getElementById('loader-wrapper').style.display = 'none';
+      }
+
     export function ResponsePost (result) {
+        hideLoadingOverlay();
         console.log(result,result.status)
       if (result.status === true) {
         Swal.fire({
