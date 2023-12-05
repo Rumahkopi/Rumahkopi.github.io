@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
+    <title>Buat Pembayaran</title>
     <!-- Add your stylesheets and other head elements here -->
     <link rel="stylesheet" href="css/styleb.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
@@ -14,14 +14,14 @@
 <body>
 <div id="loader-wrapper">
 		<div id="loaderz"></div>
-		<div id="loading-text">. Sabar CUYY!</div>
+		<div id="loading-text"></div>
 </div>
 <section class="section causes">
     <div class="container">
         <div class="columns is-justify-content-center">
             <div class="column is-7-desktop is-8-tablet">
                 <div class="section-title has-text-centered">
-                    <span class="title">Checkout</span>
+                    <span class="title">Buat Data Pembayaran</span>
                     <!-- Add any other checkout-related title or information here -->
                 </div>
             </div>
@@ -33,11 +33,11 @@
                 <div class="column is-4-desktop is-6-tablet">
                     <div class="cause-item">
                         <div class="card-body">
-                            <h3 class="title">Product Details</h3>
-                            <label for="productName">Product Name:</label>
+                            <h3 class="title">Rincian Pemesanan</h3>
+                            <label for="productName">Nama Produk:</label>
                             <input class="input is-small" type="text" id="productName" name="productName" readonly>
                             
-                            <label for="productPrice">Price:</label>
+                            <label for="productPrice">Harga:</label>
                             <input class="input is-small" type="text" id="productPrice" name="productPrice" readonly>
                             
                             <label for="productQuantity">Quantity:</label>
@@ -54,20 +54,20 @@
                 <div class="column is-4-desktop is-6-tablet">
                     <div class="cause-item">
                         <div class="card-body">
-                            <h3 class="title">Customer Information</h3>
-                            <label for="label">Your Name :</label>
+                            <h3 class="title">Informasi Pembeli</h3>
+                            <label for="label">Nama :</label>
                             <input class="input is-small" id="namapembeli" type="text" required name="customerName">
                             
-                            <label for="customerEmail">Your Email :</label>
+                            <label for="customerEmail">Email :</label>
                             <input class="input is-small" type="email" id="email" name="customerEmail" required>
                             
-                            <label for="customerAddress">Your Address :</label>
+                            <label for="customerAddress">Alamat :</label>
                             <textarea class="textarea" id="alamat" name="customerAddress" rows="4" required></textarea>
 
                             <label for="customerEmail">No Hp :</label>
                             <input class="input is-small" type="text" id="nohp" name="customerEmail" required>
                             <hr>
-                            <button type="submit" id="submit">Confirm Purchase</button>
+                            <button type="submit" id="submit">Submit</button>
                         </div>
                     </div>
                 </div>

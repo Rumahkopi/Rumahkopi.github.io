@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (result.status === true) {
         Swal.fire({
             icon: "success",
-            title: "Success Silahkan lanjutkan",
+            title: "Success Silahkan lanjutkan Pembayaran Melewati WhatsApp Ini.",
             text: result.message,
         }).then(() => {
             window.location.href = "https://wa.me/62895326369830?text=Bayar";
