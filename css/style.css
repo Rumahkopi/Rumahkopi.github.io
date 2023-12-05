@@ -1836,7 +1836,6 @@ h3.quote::before {
     /* Gaya untuk elemen yang dianimasikan */
     .typewriter-text {
       overflow: hidden; /* Membuat teks terpotong jika lebih panjang dari elemen */
-      border-bottom: 2px solid #fff; /* Garis yang menyerupai kursor mengetik */
       white-space: nowrap; /* Mencegah perataan otomatis untuk mengikuti lebar maksimum */
       margin: 0 auto; /* Pusatkan teks */
       letter-spacing: 0.1em; /* Jarak antar huruf */
