@@ -707,15 +707,15 @@ ul.list-styled {
 }
 
 .slider {
-  background: url("../images/bg/banner.png") no-repeat;
+  background: url("../images/gallery/1.jpeg") no-repeat;
   background-size: cover;
   background-position: 10% 0%;
   padding: 200px 0;
   position: relative;
 }
 .slider .block h1 {
-  font-size: 80px;
-  line-height: 80px;
+  font-size: 70px;
+  line-height: 60px;
   color: #fff;
 }
 .slider .block p {
