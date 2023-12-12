@@ -620,7 +620,7 @@ ul.list-styled {
   }
 }
 
-.navbar-dropdown {
+/* .navbar-dropdown {
   visibility: hidden;
   opacity: 0;
   transition: all 0.2s ease-in, visibility 0s linear 0.2s, transform 0.2s linear;
@@ -649,9 +649,6 @@ ul.list-styled {
   }
 }
 
-.navbar-link::after {
-  display: none !important;
-}
 
 .has-dropdown:hover .navbar-dropdown {
   visibility: visible;
@@ -675,6 +672,10 @@ ul.list-styled {
   .navbar-dropdown .navbar-item {
     padding: 0.6rem 1.5rem;
   }
+} */
+
+.navbar-link::after {
+  display: none !important;
 }
 
 @media (max-width: 768px) {
@@ -1868,3 +1869,74 @@ h3.quote::before {
     margin-top: 20px;
     font-size: 16px;
   }
+
+  
+/* Gaya untuk dropdown */
+.navbar-dropdown {
+  max-width: 1000px; /* Lebar maksimum dropdown */
+  padding: 1em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  border-radius: 5px; /* Sudut melengkung */
+  }
+  
+  .media {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #ddd; /* Garis pemisah */
+  }
+  
+  .media-left {
+  margin-right: 1em;
+  }
+  
+  .media-content h4 {
+  font-size: 15px;
+  line-height: 20px;
+  }
+
+  .media-content h5 {
+    font-size: 12px;
+    }
+
+  .cart-price {
+  margin-top: 0.5em;
+  color: #888;
+  }
+  
+  .total-price {
+  font-weight: bold;
+  }
+  
+  .buttons {
+  margin-top: auto;
+  text-align: center; /* Pusatkan tombol */
+  display: flex;
+  justify-content: space-between;
+  }
+  
+  /* Gaya untuk tombol */
+  .button.is-small {
+  width: 45%;
+  }
+  
+  /* Efek hover untuk tombol */
+  .buttons.is-centered .button.is-small:hover {
+  background-color: #fff;
+  color: black;
+  }
+  
+  /* Gaya untuk link dalam dropdown */
+  .media-heading a {
+  color: #333;
+  text-decoration: none;
+  }
+  
+  .media-heading a:hover {
+  color: orange;
+  }
+  
+  .cart-summary {
+      color: black;
+      padding: 2px;
+  }
+  
