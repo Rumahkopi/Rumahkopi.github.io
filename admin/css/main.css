@@ -2287,7 +2287,7 @@ table {
 }
 
 td,th {
-    padding: 0
+    padding: 0 ;
 }
 
 td:not([align]),th:not([align]) {
@@ -4600,7 +4600,7 @@ div.icon-text {
 }
 
 .table td,.table th {
-    border: 1px solid #fafafa;
+    border: 1px solid black;
     border-width: 0 0 1px;
     padding: .5em .75em;
     vertical-align: top
