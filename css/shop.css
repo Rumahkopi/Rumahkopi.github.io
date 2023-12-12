@@ -1,3 +1,9 @@
+.shop {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+}
 .title {
     color: #333;
   }
@@ -25,4 +31,8 @@
 
 .box {
     text-align: right;
+}
+
+.buttons i {
+ margin-right: 8%;
 }
