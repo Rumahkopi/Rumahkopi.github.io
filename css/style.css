@@ -1873,7 +1873,8 @@ h3.quote::before {
   
 /* Gaya untuk dropdown */
 .navbar-dropdown {
-  max-width: 1000px; /* Lebar maksimum dropdown */
+  max-width: none; /* Lebar maksimum dropdown */
+  width: 200px; /* Lebar dropdown */
   padding: 1em;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan */
   border-radius: 5px; /* Sudut melengkung */
@@ -1889,14 +1890,16 @@ h3.quote::before {
   margin-right: 1em;
   }
   
-  .media-content h4 {
-  font-size: 15px;
+  .media-content p {
+  font-size: 10px;
   line-height: 20px;
   }
 
-  .media-content h5 {
-    font-size: 12px;
+  .media-content span {
+    font-size: 10px;
+    line-height: 20px;
     }
+
 
   .cart-price {
   margin-top: 0.5em;
@@ -1938,5 +1941,6 @@ h3.quote::before {
   .cart-summary {
       color: black;
       padding: 2px;
+      font-weight: bold;
   }
   
