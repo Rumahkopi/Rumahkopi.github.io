@@ -73,26 +73,33 @@
 <section class="shop" id="shopping-cart">
     <h3 class="title is-3 has-text-centered" style="text-decoration: underline; margin-bottom: 7%;">Shopping Cart</h3>
     <table class="table is-hoverable">
-      <thead>
-        <tr>
-          <th>Item</th>
-          <th>Quantity</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody class="cart-items">
-      </tbody>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <tbody class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </tbody>
     </table>
     <div class="box cart-total">
-      <strong class="is-size-5">Total</strong>
-      <span class="is-size-5">Rp. 0</span>
+        <strong class="is-size-5">Total</strong>
+        <span class="is-size-5 total-price">Rp. 0</span>
     </div>
-  
+
     <div class="buttons is-justify-content-center">
-      <button type="button" class="button is-dark"><i class="fas fa-shopping-cart"></i>PURCHASE</button>
+        <button type="button" class="button is-dark" onclick="purchase()"><i class="fas fa-shopping-cart"></i>PURCHASE</button>
     </div>
-  
-  </section>
+
+    <!-- Button to update cart view -->
+    <div class="buttons is-justify-content-center mt-3">
+        <button type="button" class="button is-dark" onclick="updateCartView()">Update Cart View</button>
+    </div>
+</section>
+
   
   <section class="section causes" id="product">
     <div class="container">
