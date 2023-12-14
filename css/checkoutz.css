@@ -1,0 +1,36 @@
+/* Add your styles here */
+body {
+    font-family: Arial, sans-serif;
+}
+
+#checkout-summary {
+    margin: 20px;
+}
+
+.checkout-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.total-label {
+    font-weight: bold;
+}
+
+.checkout-total {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 2px solid #333;
+    display: flex;
+    justify-content: space-between;
+}
+
+#order-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}

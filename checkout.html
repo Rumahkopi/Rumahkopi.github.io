@@ -1,84 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buat Pembayaran</title>
-    <!-- Add your stylesheets and other head elements here -->
-    <link rel="stylesheet" href="css/styleb.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="css/stylelogin.css">
-
-    <!-- js -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="css/checkoutz.css">
+    <!-- Add your head content here -->
 </head>
 <body>
-<div id="loader-wrapper">
-		<div id="loaderz"></div>
-		<div id="loading-text"></div>
-</div>
-<section class="section causes">
-    <div class="container">
-        <div class="columns is-justify-content-center">
-            <div class="column is-7-desktop is-8-tablet">
-                <div class="section-title has-text-centered">
-                    <span class="title">Buat Data Pembayaran</span>
-                    <!-- Add any other checkout-related title or information here -->
-                </div>
-            </div>
-        </div>
-        <!-- Checkout Form -->
-        <form id="checkoutForm" method="post">
-            <!-- Display product information -->
-            <div class="columns is-multiline is-justify-content-center">
-                <div class="column is-4-desktop is-6-tablet">
-                    <div class="cause-item">
-                        <div class="card-body">
-                            <h3 class="title">Rincian Pemesanan</h3>
-                            <label for="productName">Nama Produk:</label>
-                            <input class="input is-small" type="text" id="productName" name="productName" readonly>
-                            
-                            <label for="productPrice">Harga:</label>
-                            <input class="input is-small" type="text" id="productPrice" name="productPrice" readonly>
-                            
-                            <label for="productQuantity">Quantity:</label>
-                            <input class="input is-small" type="text" id="productQuantity" name="productQuantity" readonly>
-                            
-                            <label for="productTotal">Total:</label>
-                            <input class="input is-small" type="text" id="productTotal" name="productTotal" readonly>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Form inputs for additional checkout details -->
-            <div class="columns is-multiline is-justify-content-center">
-                <div class="column is-4-desktop is-6-tablet">
-                    <div class="cause-item">
-                        <div class="card-body">
-                            <h3 class="title">Informasi Pembeli</h3>
-                            <label for="label">Nama :</label>
-                            <input class="input is-small" id="namapembeli" type="text" required name="customerName">
-                            
-                            <label for="customerEmail">Email :</label>
-                            <input class="input is-small" type="email" id="email" name="customerEmail" required>
-                            
-                            <label for="customerAddress">Alamat :</label>
-                            <textarea class="textarea" id="alamat" name="customerAddress" rows="4" required></textarea>
-
-                            <label for="customerEmail">No Hp :</label>
-                            <input class="input is-small" type="text" id="nohp" name="customerEmail" required>
-                            <hr>
-                            <button type="submit" id="submit">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-</section>
-
-<script src="js/scriptb.js" type="module"></script>
-<script type="module" src="js/inserttransaksi.js"></script>
-
+    <!-- Display cart items and total on checkout page -->
+    <div id="checkout-summary"></div>
+    <button id="order-button">Place Order</button>
 </body>
+<script type="module" src="/js/checkoutz.js"></script>
 </html>
