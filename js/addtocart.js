@@ -62,6 +62,14 @@
         // Reset the quantity to 1 for the next product
         document.getElementById(quantityId).innerText = '1';
 
+              // Show SweetAlert notification
+              Swal.fire({
+                icon: 'success',
+                title: 'Produk Di Tambahkan Ke Keranjang!',
+                text: `${productName} Telah ditambahkan ke keranjang belanja Anda.`,
+                showConfirmButton: false,
+                timer: 2000  // Set the duration for the notification
+            });
     }
 
     function findCartItem(productName) {
