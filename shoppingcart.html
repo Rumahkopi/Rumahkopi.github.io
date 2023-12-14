@@ -15,6 +15,8 @@
 	<!-- Icon -->
   <link rel="stylesheet" href="css/icofont/icofont.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- js -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <body>
 	<div id="loader-wrapper">
 		<div id="loaderz"></div>
@@ -110,12 +112,11 @@
                         </ul>
                         <p class="card-text mb-5">Kopi Nikmat Yang Menemanimu Dikala Hujan.</p>
                         <div class="quantity-container mb-3">
-                            <button class="quantity-btn" onclick="changeQuantity('harga1', 1)">+</button>
-                            <span id="quantity1">1</span>
-                            <button class="quantity-btn" onclick="changeQuantity('harga1', -1)">-</button>
+							<button class="quantity-btn" onclick="updateQuantity('quantity1', 1)">+</button>
+							<span id="quantity1">1</span>
+							<button class="quantity-btn" onclick="updateQuantity('quantity1', -1)">-</button>
                         </div>
-                        <p class="total-price">Total : Rp.<span id="total1"> 13000</span></p>
-                        <button class="btn btn-main is-rounded" onclick="buyNow('Kopi Aren', 'harga1', 'total1')">Buy Now</button>
+                        <button class="btn btn-main is-rounded" onclick="buyNow('Kopi Aren', 'harga1','images/product/kopiaren.webp', 'quantity1')">Add To Cart</button>
                     </div>
                 </div>
             </div>
@@ -131,12 +132,11 @@
                         </ul>
                         <p class="card-text mb-5">Kopi Nikmat Yang Membuat Badan Bergoyang.</p>
                         <div class="quantity-container mb-3">
-                            <button class="quantity-btn" onclick="changeQuantity('harga2', 1)">+</button>
+                            <button class="quantity-btn" onclick="updateQuantity('quantity2', 1)">+</button>
                             <span id="quantity2">1</span>
-                            <button class="quantity-btn" onclick="changeQuantity('harga2', -1)">-</button>
+                            <button class="quantity-btn" onclick="updateQuantity('quantity2', -1)">-</button>
                         </div>
-                        <p class="total-price">Total : Rp.<span id="total2"> 10000</span></p>
-                        <button class="btn btn-main is-rounded" onclick="buyNow('Kopi Espresso One Shot', 'harga2', 'total2')">Buy Now</button>
+                        <button class="btn btn-main is-rounded" onclick="buyNow('Kopi Espresso One Shot', 'harga2','images/product/kopiespresso.webp', 'quantity2')">Add To Cart</button>
                     </div>
                 </div>
             </div>
@@ -152,12 +152,11 @@
                         </ul>
                         <p class="card-text mb-5">Kopi Nikmat Yang Menemani Bergadangmu.</p>
                         <div class="quantity-container mb-3">
-                            <button class="quantity-btn" onclick="changeQuantity('harga3', 1)">+</button>
+                            <button class="quantity-btn" onclick="updateQuantity('quantity3', 1)">+</button>
                             <span id="quantity3">1</span>
-                            <button class="quantity-btn" onclick="changeQuantity('harga3', -1)">-</button>
+                            <button class="quantity-btn" onclick="updateQuantity('quantity3', -1)">-</button>
                         </div>
-                        <p class="total-price">Total : Rp.<span id="total3"> 12000</span></p>
-                        <button class="btn btn-main is-rounded" onclick="buyNow('Kopi Americano', 'harga3', 'total3')">Buy Now</button>
+                        <button class="btn btn-main is-rounded" onclick="buyNow('Kopi Americano', 'harga3', 'images/product/kopiamericano.jpeg', 'quantity3')">Add To Cart</button>
                     </div>
                 </div>
             </div>
@@ -177,5 +176,6 @@
 	</div>
 </footer>
 <script src="js/script.js"></script>
+<script src="js/addtocart.js"></script>
 </body>
 </html>
