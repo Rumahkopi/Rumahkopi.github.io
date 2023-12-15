@@ -1,28 +1,53 @@
+/* CSS/checkoutz.css */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
 }
 
-#checkout-summary {
-    margin: 20px;
+.section {
+    margin-top: 2em;
 }
 
-.checkout-item {
-    border-bottom: 1px solid #ddd;
-    padding: 10px;
+.container {
+    max-width: 1200px;
 }
 
-.total-label {
-    font-weight: bold;
+.columns {
+    margin-top: 1em;
 }
 
-.checkout-total {
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 2px solid #333;
-    display: flex;
-    justify-content: space-between;
+.table-container {
+    overflow-x: auto;
 }
 
-button {
-text-align: center;
+.table {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+    border: none;
+}
+
+.table th {
+    background-color: #f5f5f5;
+}
+
+.form-container {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+}
+
+.field {
+    margin-bottom: 1.5em;
+}
+
+.has-text-centered {
+    margin-top: 1em;
+}
+
+#order-button {
+    width: 100%;
 }

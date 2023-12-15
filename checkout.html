@@ -7,8 +7,65 @@
 <body>
     <section class="section">
         <div class="container">
-            <div id="checkout-summary" class="box"></div>
-            <button id="order-button" class="button is-dark is-outlined">Place Order</button>
+            <div class="columns">
+                <!-- Tabel Produk -->
+                <div class="column is-half">
+                    <div class="table-container">
+                        <table class="table is-fullwidth is-striped is-hoverable"  id="checkout-summary">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Produk</th>
+                                    <th>Quantity</th>
+                                    <th>Sub Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="produk">
+                                <!-- Isi tabel akan di-generate secara dinamis dari JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Form Order -->
+                <div class="column is-half">
+                    <div class="form-container">
+                        <form>
+                            <div class="field">
+                                <label class="label">Name</label>
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="Your Name">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Email</label>
+                                <div class="control">
+                                    <input class="input" type="email" placeholder="Your Email">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Address</label>
+                                <div class="control">
+                                    <textarea class="textarea" placeholder="Your Address"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Phone Number</label>
+                                <div class="control">
+                                    <input class="input" type="tel" placeholder="Your Phone Number">
+                                </div>
+                            </div>
+
+                            <div class="has-text-centered">
+                                <button id="order-button" class="button is-dark">Place Order</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </body>

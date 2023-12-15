@@ -6,12 +6,18 @@ document.addEventListener('DOMContentLoaded', function () {
     var checkoutSummary = document.getElementById('checkout-summary');
 
     cartItems.forEach(function (item) {
-        var itemContainer = document.createElement('div');
+        var itemContainer = document.createElement('thead');
         itemContainer.innerHTML = `
+            <td>
             <img src="${item.imageSrc}" alt="Product Image" style="width: 50px; height: 50px; margin-right: 10px;">
+            </td>
+            <td>
             <span>${item.productName}</span>
-            <span>Quantity: ${item.quantity}</span>
-            <span>Total: Rp.${item.totalPrice.toLocaleString()}</span>
+            </td>
+            <td>
+            <span id="quantity1">${item.quantity}</span>
+            </td>
+            <td> Rp.${item.totalPrice.toLocaleString()}</td>
         `;
         itemContainer.classList.add('checkout-item');
         checkoutSummary.appendChild(itemContainer);
@@ -23,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 0);
 
     var totalContainer = document.createElement('div');
-    totalContainer.innerHTML = `<div class="total-label">Total:</div><div class="total-amount">Rp.${total.toLocaleString()}</div>`;
+    totalContainer.innerHTML = `<div class="total-label" style="font-style: bold;">Total:</div><div class="total-amount">Rp.${total.toLocaleString()}</div>`;
     totalContainer.classList.add('checkout-total');
     checkoutSummary.appendChild(totalContainer);
 
