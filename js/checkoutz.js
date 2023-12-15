@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <span>${item.productName}</span>
             </td>
             <td>
-            <span id="quantity1">${item.quantity}</span>
+            <span>${item.quantity}</span>
             </td>
             <td> Rp.${item.totalPrice.toLocaleString()}</td>
         `;
@@ -28,8 +28,12 @@ document.addEventListener('DOMContentLoaded', function () {
         return acc + item.totalPrice;
     }, 0);
 
-    var totalContainer = document.createElement('div');
-    totalContainer.innerHTML = `<div class="total-label" style="font-style: bold;">Total:</div><div class="total-amount">Rp.${total.toLocaleString()}</div>`;
+    var totalContainer = document.createElement('th');
+    totalContainer.innerHTML = `
+    <div>
+    <div class="total-label has-text-weight-bold">Total : Rp.${total.toLocaleString()}</div>
+    </div>
+    `;
     totalContainer.classList.add('checkout-total');
     checkoutSummary.appendChild(totalContainer);
 
