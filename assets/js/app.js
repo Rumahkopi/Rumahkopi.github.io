@@ -69,9 +69,9 @@ class UI {
               add to cart
             </button>
           </div>
-          <h3>${product.title}</h3>
-          <p>${product.description}.</p>
-          <h4>Price: Rp. ${product.price}</h4>
+          <h3 class="label">${product.title}</h3>
+          <p class="label">${product.description}.</p>
+          <h4 class="label">Price: Rp. ${product.price}</h4>
         </article>
         <!-- single product end -->`;
     });
