@@ -146,8 +146,8 @@ class UI {
 
             <div>
               <h4>${item.title}</h4>
-              <h5>Price : $ ${item.price}</h5>
-              <span class="remove-item" data-id=${item.id}>remove</span>
+              <h5>Price : Rp. ${item.price}</h5>
+              <span class="remove-item" data-id=${item.id}>Remove</span>
             </div>
 
             <div>
