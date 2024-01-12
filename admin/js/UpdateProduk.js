@@ -50,6 +50,7 @@ const updateProduk = () => {
         "harga": getValue("harga"),
         "deskripsi": getValue("deskripsi"),
         "stok": getValue("stok"),
+        "image": getValue("image"),
     };
     
     putData(target_url, data, responseData);
