@@ -4,6 +4,7 @@ export const isiData = (results) => {
       {id: "harga", path: "data.0.harga"},
       {id: "deskripsi", path: "data.0.deskripsi"},
       {id: "stok", path: "data.0.stok"},
+      {id: "image", path: "data.0.image"},
     ];
   
     console.log("isiData - Input:", results);

@@ -31,16 +31,14 @@ let buttonsDOM = [];
 class Products {
   async getProducts() {
     try {
-      let result = await fetch("assets/json/products.json");
+      let result = await fetch("https://asia-southeast2-msyahid.cloudfunctions.net/GetDataProduk");
       let data = await result.json();
 
-      let products = data.items;
+      let products = data;
       products = products.map((item) => {
-        const { title, price } = item.fields;
-        const { id } = item.sys;
-        const image = item.fields.image.fields.file.url;
+        const { _id, nama, harga, deskripsi, image } = item;
 
-        return { title, price, id, image };
+        return { id: _id, title: nama, price: harga, description: deskripsi, image: image };
       });
       return products;
     } catch (error) {
@@ -72,6 +70,7 @@ class UI {
             </button>
           </div>
           <h3>${product.title}</h3>
+          <p>${product.description}.</p>
           <h4>Price: Rp. ${product.price}</h4>
         </article>
         <!-- single product end -->`;

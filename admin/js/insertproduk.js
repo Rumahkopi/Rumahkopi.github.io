@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const harga = document.querySelector("#harga").value;
         const deskripsi = document.querySelector("#deskripsi").value;
         const stok = document.querySelector("#stok").value;
+        const image = document.querySelector("#image").value;
         console.log(nama)
     
         const data = {
@@ -36,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
             harga: harga,
             deskripsi: deskripsi,
             stok : stok,
+            image : image,
         };
         return data
     }
