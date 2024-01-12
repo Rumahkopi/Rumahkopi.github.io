@@ -72,7 +72,7 @@ class UI {
             </button>
           </div>
           <h3>${product.title}</h3>
-          <h4>Price: $ ${product.price}</h4>
+          <h4>Price: Rp. ${product.price}</h4>
         </article>
         <!-- single product end -->`;
     });
