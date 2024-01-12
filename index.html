@@ -11,6 +11,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="./images/logo2.png" />
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./assets/css/style.css" />
 	<!-- Icon -->
   <link rel="stylesheet" href="css/icofont/icofont.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -45,52 +46,20 @@
 		</div>
 	</div>
 	<nav id="navbar" class="navbar main-nav is-dark">
-		<div class="container">
-			<div class="navbar-brand">
-				<a class="navbar-item" href="index.html">
-					<img src="images/logo2.png" alt="logo">
-				</a>
-				<button role="button" class="navbar-burger burger" data-hidden="true" data-target="navigation">
-					<span aria-hidden="true"></span>
-					<span aria-hidden="true"></span>
-					<span aria-hidden="true"></span>
-				</button>
+			<div class="navbar-center">
+			  <span class="nav-item">
+          <a class="navbar-link" href="index.html">Home</a>
+			  </span>
+			  <!-- app logo -->
+			  <img src="images/logo2.png" alt="store logo" />
+		
+			  <div class="cart-btn">
+				<span class="nav-icon">
+				  <i class="fa fa-cart-plus" aria-hidden="true"></i>
+				</span>
+				<div class="cart-items">0</div>
+			  </div>
 			</div>
-			<div class="navbar-menu mr-0" id="navigation">
-				<ul class="navbar-end">					 
-					<li class="navbar-item">
-						<a class="navbar-link" href="index.html">Home</a>
-					</li>
-					
-					<li class="navbar-item">
-						<a class="navbar-link" href="about.html">About</a>
-					</li>
-
-					<li class="navbar-item">
-						<a class="navbar-link" href="#product">Product</a>
-					</li>
-
-					<li class="navbar-item">
-						<a class="navbar-link" href="#contact">Contact</a>
-					</li>
-
-					<li class="navbar-item has-dropdown is-hoverable">
-						<a class="navbar-link"><i class="fas fa-shopping-cart"></i></a>
-						<div class="navbar-dropdown" id="cart-dropdown">
-							  <div class="cart-summary">
-								<span>Total</span>
-								<span class="total-price">Rp. </span>
-							  </div>
-							  <div class="buttons">
-								<a href="shoppingcart.html" class="button is-small is-dark" >View Cart</a>
-								<a href="checkout.html" class="button is-small is-dark">Checkout</a>
-							  </div>
-							</div>
-					</li>
-					  </div>					  
-				</ul>
-			</div>
-		</div>
 	</nav>
 </header>
 <!-- Header Close -->
@@ -145,76 +114,84 @@
 	</div>
 </div>
 </section>
+  <!-- start of products -->
+  <section class="products">
+	<div class="section-title">
+	  <h2>Order Disini!!</h2>
+	</div>
 
-<section class="section causes" id="product">
-    <div class="container">
-        <div class="columns is-justify-content-center">
-			<h2 class="mt-4 mb-5 is-relative content-title">Order Disini</h2>
-        </div>
+	<div class="products-center">
+	  <!-- single product start -->
+	  <!-- <article class="product">
+		<div class="img-container">
+		  <img
+			src="./assets/img/product-1.jpeg"
+			alt="product"
+			class="product-img"
+		  />
 
-        <div class="columns is-multiline is-justify-content-center">
-            <!-- Product 1 -->
-            <div class="column is-4-desktop is-6-tablet">
-                <div class="cause-item">
-                    <img src="images/product/kopiaren.webp" class="w-100" alt="...">
-                    <div class="card-body">
-                        <h3 class="mb-4">Kopi Aren</h3>
-                        <ul class="list-inline border-bottom border-top py-3 mb-4">
-                            <li class="list-inline-item"><i class="icofont-check text-color mr-2"></i>Harga : Rp.<span id="harga1"> 13000</span></li>
-                        </ul>
-                        <p class="card-text mb-5">Kopi Nikmat Yang Menemanimu Dikala Hujan.</p>
-                        <div class="quantity-container mb-3">
-							<button class="quantity-btn" onclick="updateQuantity('quantity1', 1)">+</button>
-							<span id="quantity1">1</span>
-							<button class="quantity-btn" onclick="updateQuantity('quantity1', -1)">-</button>
-                        </div>
-                        <button class="btn btn-main is-rounded" onclick="buyNow('Kopi Aren', 'harga1','images/product/kopiaren.webp', 'quantity1')">Add To Cart</button>
-                    </div>
-                </div>
-            </div>
+		  <button class="bag-btn" data-id="1">
+			<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			add to bag
+		  </button>
+		</div>
+		<h3>queen bag</h3>
+		<h4>Price: $16</h4>
+	  </article> -->
+	  <!-- single product end -->
+	</div>
+  </section>
+  <!-- end of products -->
 
-            <!-- Product 2 -->
-            <div class="column is-4-desktop is-6-tablet">
-                <div class="cause-item">
-                    <img src="images/product/kopiespresso.webp" class="w-100" alt="...">
-                    <div class="card-body">
-                        <h3 class="mb-4">Kopi Espresso One Shot</h3>
-                        <ul class="list-inline border-bottom border-top py-3 mb-4">
-                            <li class="list-inline-item"><i class="icofont-check text-color mr-2"></i>Harga : Rp.<span id="harga2"> 10000</span></li>
-                        </ul>
-                        <p class="card-text mb-5">Kopi Nikmat Yang Membuat Badan Bergoyang.</p>
-                        <div class="quantity-container mb-3">
-                            <button class="quantity-btn" onclick="updateQuantity('quantity2', 1)">+</button>
-                            <span id="quantity2">1</span>
-                            <button class="quantity-btn" onclick="updateQuantity('quantity2', -1)">-</button>
-                        </div>
-                        <button class="btn btn-main is-rounded" onclick="buyNow('Kopi Espresso One Shot', 'harga2','images/product/kopiespresso.webp', 'quantity2')">Add To Cart</button>
-                    </div>
-                </div>
-            </div>
+  <!-- start of cart -->
+<div class="cart-overlay">
+  <div class="cart">
+    <span class="close-cart">
+      <i class="fa fa-window-close" aria-hidden="true"></i>
+    </span>
+    <h2>Your Cart</h2>
 
-            <!-- Product 3 -->
-            <div class="column is-4-desktop is-6-tablet">
-                <div class="cause-item">
-                    <img src="images/product/kopiamericano.jpeg" class="w-100" alt="...">
-                    <div class="card-body">
-                        <h3 class="mb-4">Kopi Americano</h3>
-                        <ul class="list-inline border-bottom border-top py-3 mb-4">
-                            <li class="list-inline-item"><i class="icofont-check text-color mr-2"></i>Harga : Rp.<span id="harga3"> 12000</span></li>
-                        </ul>
-                        <p class="card-text mb-5">Kopi Nikmat Yang Menemani Bergadangmu.</p>
-                        <div class="quantity-container mb-3">
-                            <button class="quantity-btn" onclick="updateQuantity('quantity3', 1)">+</button>
-                            <span id="quantity3">1</span>
-                            <button class="quantity-btn" onclick="updateQuantity('quantity3', -1)">-</button>
-                        </div>
-                        <button class="btn btn-main is-rounded" onclick="buyNow('Kopi Americano', 'harga3', 'images/product/kopiamericano.jpeg', 'quantity3')">Add To Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    <!-- Add the form for entering the name -->
+    <form id="nameForm">
+      <label for="customerName">Enter Your Name:</label>
+      <input type="text" id="customerName" name="customerName" required>
+    </form>
+
+    <!-- Other cart content goes here -->
+
+	  <div class="cart-content">
+		<!-- cart item start -->
+		<!-- <div class="cart-item">
+		  <img src="./assets/img/product-1.jpeg" alt="product" />
+
+		  <div>
+			<h4>queen bed</h4>
+			<h5>$9.00</h5>
+			<span class="remove-item">remove</span>
+		  </div>
+
+		  <div>
+			<i class="fa fa-chevron-up" aria-hidden="true"></i>
+			<p class="item-amount">1</p>
+			<i class="fa fa-chevron-down" aria-hidden="true"></i>
+		  </div>
+		</div> -->
+		<!-- cart item end -->
+	  </div>
+	  <!-- cart footer -->
+	  <div class="cart-footer">
+		<h3>your total : $ <span class="cart-total">0</span></h3>
+
+		<!-- clear all cart item button -->
+		<button class="clear-cart banner-btn">clear cart</button>
+	  </div>
+	</div>
+  </div>
+  <!-- end of cart -->
+
+  <!-- javascript -->
+
+
 <!-- contact us -->
 <section class="contact-wrap section-bottom" id="contact">
 	<div class="container">
@@ -248,6 +225,7 @@
     <script src="js/script.js" type="module"></script>
 	<script src="js/scriptapi.js" type="module"></script>
 	<script src="js/addtocart.js"></script>
+	<script src="./assets/js/app.js" type="module"></script>
   </body>
   </html>
    
