@@ -134,7 +134,8 @@ class UI {
     });
     // cartTotal.innerText = parseFloat(tempTotal.toFixed(2));
     cartTotal.innerText = parseFloat(tempTotal.toFixed(2) + '000');
-    cartItems.innerText = itemsTotal;
+    // cartItems.innerText = itemsTotal;
+    cartItems.innerText = itemsTotal.toFixed(3);
     // console.log(cartTotal, cartItems);
   }
 
