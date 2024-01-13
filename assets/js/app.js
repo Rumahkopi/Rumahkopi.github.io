@@ -8,7 +8,20 @@
  *
  *      </> Happy Coding ☺ </>
  */
+const checkoutBtn = document.getElementById('checkout-btn');
 
+// Add a click event listener to the checkout button
+checkoutBtn.addEventListener('click', () => {
+  // Get the total price from the cart
+  const totalPrice = parseFloat(cartTotal.innerText);
+
+  // You can replace the following line with the appropriate WhatsApp API or link
+  // For example, using a link with the 'https://wa.me/' format
+  const whatsappLink = `https://wa.me/6285312923192?text=Hello! I want to make a purchase. Total: Rp.${totalPrice}`;
+
+  // Open a new tab or redirect the user to the WhatsApp link
+  window.open(whatsappLink, '_blank');
+});
 // define variable & select elements
 const cartBtn = document.querySelector(".cart-btn");
 const closeCartBtn = document.querySelector(".close-cart");
@@ -124,6 +137,7 @@ class UI {
       }
     });
   }
+  
   setCartValues(cart) {
     let tempTotal = 0;
     let itemsTotal = 0;
@@ -132,7 +146,7 @@ class UI {
       tempTotal += item.price * item.amount;
       itemsTotal += item.amount;
     });
-    cartTotal.innerText = parseFloat(tempTotal.toFixed(3)).toFixed(3); 
+    cartTotal.innerText = parseFloat(tempTotal.toFixed(3)).toFixed(3); // Format angka desimal pada cartTotal
     cartItems.innerText = itemsTotal.toFixed(0);
     // console.log(cartTotal, cartItems);
   }
