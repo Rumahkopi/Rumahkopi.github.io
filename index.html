@@ -194,14 +194,10 @@
     <span class="close-cart">
       <i class="fa fa-window-close" aria-hidden="true"></i>
     </span>
+	<span class="clear-cart">
+		<i class="fa fa-trash" aria-hidden="true"></i>
+	  </span>
     <h2>Your Cart</h2>
-
-    <!-- Add the form for entering the name -->
-    <form id="nameForm">
-      <label for="customerName">Enter Your Name:</label>
-      <input type="text" id="customerName" name="customerName" required>
-    </form>
-
     <!-- Other cart content goes here -->
 
 	  <div class="cart-content">
@@ -225,11 +221,57 @@
 	  </div>
 	  <!-- cart footer -->
 	  <div class="cart-footer">
-		<h3>your total : Rp. <span class="cart-total">0</span></h3>
+		<p>Total : Rp. <span class="cart-total">0</span></p>
 
 		<!-- clear all cart item button -->
-		<button class="clear-cart banner-btn">Clear Cart</button>
+		<!-- <button class="clear-cart banner-btn">Clear Cart</button> -->
 	  </div>
+	  
+    <!-- Add the form for entering the name -->
+	<div class="card-content">
+		<h2>Informasi Customer</h2>
+    <form id="nameForm">
+		<div class="field is-horizontal">
+			<div class="field-label is-normal">
+			  <label class="label">Nama</label>
+			</div>
+			<div class="field-body">
+			  <div class="field">
+				<p class="control is-expanded">
+				  <input id="nama" class="input" type="text" placeholder="Masukkan Nama Anda" required>
+				</p>
+			  </div>
+			</div>
+		  </div>
+		  <div class="field is-horizontal">
+			<div class="field-label is-normal">
+			  <label class="label">Alamat</label>
+			</div>
+			<div class="field-body">
+			  <div class="field">
+				<p class="control is-expanded">
+				  <input id="nama" class="input" type="text" placeholder="Masukkan Alamat Anda" required>
+				</p>
+			  </div>
+			</div>
+		  </div>
+		  <div class="field is-horizontal">
+			<div class="field-label is-normal">
+			  <label class="label">No. HP</label>
+			</div>
+			<div class="field-body">
+			  <div class="field">
+				<p class="control is-expanded">
+				  <input id="nama" class="input" type="text" placeholder="Masukkan No. HP Anda" required>
+				</p>
+			  </div>
+			</div>
+		  </div>
+		  <div class="cart-footer">
+		  <button class="banner-btn">Checkout</button>
+		  </div>
+    </form>
+	</div>
 	</div>
   </div>
   <!-- end of cart -->

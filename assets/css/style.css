@@ -95,7 +95,7 @@ body {
   margin-bottom: 3rem;
 }
 .banner-btn {
-  padding: 1rem 3rem;
+  padding: 10px;
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
   font-size: 1rem;
@@ -233,6 +233,14 @@ body {
   cursor: pointer;
 }
 .close-cart:hover {
+  color: red;
+}
+
+.clear-cart {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.clear-cart:hover {
   color: red;
 }
 .cart h2 {

@@ -146,7 +146,7 @@ class UI {
 
             <div>
               <h4>${item.title}</h4>
-              <h5>Price : Rp. ${item.price}</h5>
+              <p>Price : Rp. ${item.price}</p>
               <span class="remove-item" data-id=${item.id}>Remove</span>
             </div>
 
@@ -233,7 +233,6 @@ class UI {
     while (cartContent.children.length > 0) {
       cartContent.removeChild(cartContent.children[0]);
     }
-    this.hideCart();
   }
   removeItem(id) {
     cart = cart.filter((item) => item.id !== id);
