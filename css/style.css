@@ -304,7 +304,8 @@ a:focus {
 .content-title {
   font-size: 40px;
   line-height: 50px;
-}
+  margin-left: 18px;
+  }
 
 .page-title {
   padding: 120px 0;
@@ -1945,4 +1946,3 @@ h3.quote::before {
       padding: 2px;
       font-weight: bold;
   }
-  
