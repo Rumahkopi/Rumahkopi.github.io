@@ -132,8 +132,7 @@ class UI {
       tempTotal += item.price * item.amount;
       itemsTotal += item.amount;
     });
-    // cartTotal.innerText = parseFloat(tempTotal.toFixed(2));
-    cartTotal.innerText = parseFloat(tempTotal.toFixed(2) + '000');
+    cartTotal.innerText = parseFloat(tempTotal.toFixed(2));
     cartItems.innerText = itemsTotal;
     // console.log(cartTotal, cartItems);
   }
