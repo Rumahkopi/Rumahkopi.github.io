@@ -1,9 +1,7 @@
 import { postWithBearer } from "https://jscroot.github.io/api/croot.js";
 
 export let URLPost = `https://asia-southeast2-msyahid.cloudfunctions.net/InsertDataTransaksi`
-export let productNames, alamat, totalPrice = `./assets/js/app.js`
-
-
+export let token = 'token';
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -19,17 +17,23 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
     export function GetDataForm(){
-        const namaproduk = document.querySelector("#productNames").value;
-        const total = document.querySelector("#totalProducts").value;
-        const namapembeli = document.querySelector("#nama").value;
+        const namaproduk = document.querySelector("#productName").value;
+        const harga = document.querySelector("#productPrice").value;
+        const quantity = document.querySelector("#productQuantity").value;
+        const total = document.querySelector("#productTotal").value;
+        const namapembeli = document.querySelector("#namapembeli").value;
+        const email = document.querySelector("#email").value;
         const alamat = document.querySelector("#alamat").value;
         const nohp = document.querySelector("#nohp").value;
         console.log(namapembeli)
     
         const data = {
             namaproduk: namaproduk,
+            harga: harga,
+            quantity: quantity,
             total : total,
             namapembeli : namapembeli,
+            email : email,
             alamat : alamat,
             nohp : nohp,
         };
@@ -55,13 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
             title: "Success Silahkan lanjutkan Pembayaran Melewati WhatsApp Ini.",
             confirmButtonColor: '#000',
         }).then(() => {
-          const whatsappMessage = `Halo, saya ingin memesan produk sebagai berikut:%0A${productNames}%0A%0AAlamat Pengiriman:%0A${alamat}%0A%0ATotal Harga:%20Rp.${totalPrice}`;
-
-          // Combine the WhatsApp number and message
-          const whatsappLink = `https://wa.me/6285784718312?text=${whatsappMessage}`;
-      
-          // Redirect to WhatsApp
-          window.location.href = whatsappLink;        
+            window.location.href = "https://wa.me/62895326369830?text=Bayar";
         });
     } else {
         Swal.fire({
