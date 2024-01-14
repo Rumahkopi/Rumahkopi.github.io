@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function() {
             namaproduk: namaproduk,
             total : total,
             namapembeli : namapembeli,
-            email : email,
             alamat : alamat,
             nohp : nohp,
         };
