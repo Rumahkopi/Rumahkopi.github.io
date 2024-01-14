@@ -238,7 +238,7 @@
     <!-- Add the form for entering the name -->
 	<div class="card-content">
 		<h2>Informasi Customer</h2>
-    <form id="nameForm">
+    <form id="form" method="post">
 		<div class="field is-horizontal">
 			<div class="field-label is-normal">
 			  <label class="label">Nama</label>
@@ -258,7 +258,7 @@
 			<div class="field-body">
 			  <div class="field">
 				<p class="control is-expanded">
-				  <input id="nama" class="input" type="text" placeholder="Masukkan Alamat Anda" required>
+				  <input id="alamat" class="input" type="text" placeholder="Masukkan Alamat Anda" required>
 				</p>
 			  </div>
 			</div>
@@ -270,7 +270,7 @@
 			<div class="field-body">
 			  <div class="field">
 				<p class="control is-expanded">
-				  <input id="nama" class="input" type="text" placeholder="Masukkan No. HP Anda" required>
+				  <input id="nohp" class="input" type="text" placeholder="Masukkan No. HP Anda" required>
 				</p>
 			  </div>
 			</div>
@@ -301,7 +301,7 @@
 		</div>
 
 		  <div class="cart-footer">
-		  <button class="banner-btn">Checkout</button>
+		  <button class="banner-btn" type="submit">Checkout</button>
 		  </div>
     </form>
 	</div>
@@ -398,6 +398,7 @@
 	<script src="js/scriptapi.js" type="module"></script>
 	<script src="js/addtocart.js"></script>
 	<script src="./assets/js/app.js" type="module"></script>
+	<script type="module" src="./js/inserttransaksi.js"></script>
 	<script async src='https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js'></script>
 	<script>
 	  var wa_btnSetting = {"btnColor":"#16BE45","ctaText":"Hubungi Kami","cornerRadius":40,"marginBottom":20,"marginLeft":20,"marginRight":20,"btnPosition":"right","whatsAppNumber":"085784718312","welcomeMessage":"Kirim pesan dengan keyword \"Ada Masalah\" ","zIndex":999999,"btnColorScheme":"light"};

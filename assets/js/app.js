@@ -1,3 +1,7 @@
+import { postWithBearer } from "https://jscroot.github.io/api/croot.js";
+
+export let URLPost = `https://asia-southeast2-msyahid.cloudfunctions.net/InsertDataTransaksi`
+
 const cartBtn = document.querySelector(".cart-btn");
 const closeCartBtn = document.querySelector(".close-cart");
 const clearCartBtn = document.querySelector(".clear-cart");
@@ -261,30 +265,6 @@ document.addEventListener("DOMContentLoaded", () => {
       ui.getBagButtons();
       ui.cartLogic();
     });
-
-  const checkoutButton = document.querySelector(".banner-btn");
-  checkoutButton.addEventListener("click", () => {
-    // Get customer information
-    const nama = document.getElementById('nama').value;
-    const alamat = document.getElementById('alamat').value;
-    const noHP = document.getElementById('noHP').value;
-
-    // Get total products and product names
-    const totalProducts = document.getElementById('totalProducts').value;
-    const productNames = document.getElementById('productNames').value;
-
-    // Get total price
-    const totalPrice = document.querySelector(".cart-total").innerText;
-
-    // Create the WhatsApp message
-    const whatsappMessage = `Halo, saya ingin memesan produk sebagai berikut:%0A${productNames}%0A%0AAlamat Pengiriman:%0A${alamat}%0A%0ATotal Harga:%20Rp.${totalPrice}`;
-
-    // Combine the WhatsApp number and message
-    const whatsappLink = `https://wa.me/6285784718312?text=${whatsappMessage}`;
-
-    // Redirect to WhatsApp
-    window.location.href = whatsappLink;
-  });
 });
 
 // add event listener
@@ -305,3 +285,4 @@ document.addEventListener("DOMContentLoaded", () => {
       ui.cartLogic();
     });
 });
+
