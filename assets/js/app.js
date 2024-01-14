@@ -139,6 +139,28 @@ class UI {
     this.updateTotalProducts();
   }
 
+  checkoutAll() {
+    const productDetails = cart.reduce((msg, item) => {
+      const subtotal = (item.price * item.amount).toFixed(3);
+      return msg + `Nama Produk : ${item.title}, Jumlah Barang : ${item.amount}, Subtotal : Rp. ${subtotal}\n`;
+    }, "");
+  
+    const totalAmount = cart.reduce((total, item) => total + item.price * item.amount, 0).toFixed(3);
+    const customerName = document.getElementById('nama').value;
+    const customerAddress = document.getElementById('alamat').value;
+    const customerPhoneNumber = document.getElementById('nohp').value;
+  
+    const message = `Saya Ingin Membeli Semua Produk Ini :\n${productDetails}Total Keseluruhan : Rp. ${totalAmount}\n\n Informasi Customer : \nNama : ${customerName}\nAlamat : ${customerAddress}\nNo. Hp : ${customerPhoneNumber}`;
+  
+    const encodedMessage = encodeURIComponent(message);
+  
+    // Replace the following phone number with your own WhatsApp business number
+    const phoneNumber = "1234567890";
+  
+    const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  
+    window.open(whatsappLink, "_blank");
+  }
   showCart() {
     cartOverlay.classList.add("transparentBcg");
     cartDOM.classList.add("showCart");
@@ -156,6 +178,13 @@ class UI {
 
     cartBtn.addEventListener("click", this.showCart);
     closeCartBtn.addEventListener("click", this.hideCart);
+
+      // Add event listener for the new Checkout All button
+      const checkoutAllBtn = document.querySelector(".checkout-all-btn");
+      if (checkoutAllBtn) {
+        checkoutAllBtn.addEventListener("click", () => this.checkoutAll());
+      }
+    
   }
 
   populateCart(cart) {
@@ -260,48 +289,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(() => {
       ui.getBagButtons();
       ui.cartLogic();
+
     });
-
-  const checkoutButton = document.querySelector(".banner-btn");
-  checkoutButton.addEventListener("click", () => {
-    // Get customer information
-    const nama = document.getElementById('nama').value;
-    const alamat = document.getElementById('alamat').value;
-    const noHP = document.getElementById('noHP').value;
-
-    // Get total products and product names
-    const totalProducts = document.getElementById('totalProducts').value;
-    const productNames = document.getElementById('productNames').value;
-
-    // Get total price
-    const totalPrice = document.querySelector(".cart-total").innerText;
-
-    // Create the WhatsApp message
-    const whatsappMessage = `Halo, saya ingin memesan produk sebagai berikut:%0A${productNames}%0A%0AAlamat Pengiriman:%0A${alamat}%0A%0ATotal Harga:%20Rp.${totalPrice}`;
-
-    // Combine the WhatsApp number and message
-    const whatsappLink = `https://wa.me/6285784718312?text=${whatsappMessage}`;
-
-    // Redirect to WhatsApp
-    window.location.href = whatsappLink;
   });
-});
-
-// add event listener
-document.addEventListener("DOMContentLoaded", () => {
-  const ui = new UI();
-  const products = new Products();
-
-  ui.setupAPP();
-
-  products
-    .getProducts()
-    .then((products) => {
-      ui.displayProducts(products);
-      Storage.saveProducts(products);
-    })
-    .then(() => {
-      ui.getBagButtons();
-      ui.cartLogic();
-    });
-});

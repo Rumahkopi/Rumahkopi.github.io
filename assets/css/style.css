@@ -94,7 +94,7 @@ body {
   letter-spacing: var(--mainSpacing);
   margin-bottom: 3rem;
 }
-.banner-btn {
+.checkout-all-btn {
   padding: 10px;
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
@@ -105,7 +105,7 @@ body {
   transition: var(--mainTransition);
   cursor: pointer;
 }
-.banner-btn:hover {
+.checkout-all-btn:hover {
   background: transparent;
   color: var(--primaryColor);
 }
@@ -241,15 +241,6 @@ body {
   cursor: pointer;
 }
 .clear-cart:hover {
-  color: red;
-}
-
-.refresh {
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-.refresh:hover {
   color: red;
 }
 
