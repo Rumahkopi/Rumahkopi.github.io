@@ -155,7 +155,7 @@ class UI {
     const encodedMessage = encodeURIComponent(message);
   
     // Replace the following phone number with your own WhatsApp business number
-    const phoneNumber = "1234567890";
+    const phoneNumber = "085716349516";
   
     const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   
