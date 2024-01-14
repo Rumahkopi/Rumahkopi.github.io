@@ -243,6 +243,16 @@ body {
 .clear-cart:hover {
   color: red;
 }
+
+.refresh {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.refresh:hover {
+  color: red;
+}
+
 .cart h2 {
   text-transform: capitalize;
   text-align: center;

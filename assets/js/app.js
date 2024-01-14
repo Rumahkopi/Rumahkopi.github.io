@@ -1,15 +1,3 @@
-/**
- * !=====> : ABOUT AUTHOR : <=====!
- *
- * @author : Md. Samiur Rahman (Mukul)
- * @education : B.Sc. Hons In CSE (SIBACS)
- * @passion : PROGRAMMER & SOFTWARE DEVELOPER
- * @email : sr.mukul9090@gmail.com
- *
- *      </> Happy Coding ☺ </>
- */
-
-// define variable & select elements
 const cartBtn = document.querySelector(".cart-btn");
 const closeCartBtn = document.querySelector(".close-cart");
 const clearCartBtn = document.querySelector(".clear-cart");
@@ -74,7 +62,23 @@ class UI {
       console.log("Error = " + e);
     }
   }
+  updateTotalProducts() {
+    const totalProductsInput = document.getElementById('totalProducts');
+    const productNamesInput = document.getElementById('productNames');
 
+    // Reset the previous content
+    productNamesInput.value = '';
+
+    // Update total products count
+    const totalProducts = cart.reduce((total, item) => {
+        // Append each product name and count to the input field
+        productNamesInput.value += `${item.title} x ${item.amount}, `;
+
+        return total + item.amount;
+    }, 0);
+
+    totalProductsInput.value = totalProducts;
+}
   getBagButtons() {
     const buttons = [...document.querySelectorAll(".bag-btn")];
     buttonsDOM = buttons;
@@ -132,6 +136,7 @@ class UI {
       </div>`;
 
     cartContent.appendChild(div);
+    this.updateTotalProducts();
   }
 
   showCart() {
@@ -168,6 +173,7 @@ class UI {
         let id = removeItem.dataset.id;
         cartContent.removeChild(removeItem.parentElement.parentElement);
         this.removeItem(id);
+        this.updateTotalProducts();
       } else if (event.target.classList.contains("fa-chevron-up")) {
         let addAmount = event.target;
         let id = addAmount.dataset.id;
@@ -175,13 +181,14 @@ class UI {
         tempItem.amount = tempItem.amount + 1;
         Storage.saveCart(cart);
         this.setCartValues(cart);
+        this.updateTotalProducts();
         addAmount.nextElementSibling.innerText = tempItem.amount;
       } else if (event.target.classList.contains("fa-chevron-down")) {
         let lowerAmount = event.target;
         let id = lowerAmount.dataset.id;
         let tempItem = cart.find((item) => item.id === id);
         tempItem.amount = tempItem.amount - 1;
-
+        this.updateTotalProducts();
         if (tempItem.amount > 0) {
           Storage.saveCart(cart);
           this.setCartValues(cart);
@@ -211,6 +218,7 @@ class UI {
     let button = this.getSingleButton(id);
     button.disabled = false;
     button.innerHTML = `<i class="fas fa-shopping-cart"></i>add to cart`;
+    this.updateTotalProducts();
   }
 
   getSingleButton(id) {
@@ -237,6 +245,47 @@ class Storage {
     return localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : [];
   }
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const ui = new UI();
+  const products = new Products();
+
+  ui.setupAPP();
+
+  products
+    .getProducts()
+    .then((products) => {
+      ui.displayProducts(products);
+      Storage.saveProducts(products);
+    })
+    .then(() => {
+      ui.getBagButtons();
+      ui.cartLogic();
+    });
+
+  const checkoutButton = document.querySelector(".banner-btn");
+  checkoutButton.addEventListener("click", () => {
+    // Get customer information
+    const nama = document.getElementById('nama').value;
+    const alamat = document.getElementById('alamat').value;
+    const noHP = document.getElementById('noHP').value;
+
+    // Get total products and product names
+    const totalProducts = document.getElementById('totalProducts').value;
+    const productNames = document.getElementById('productNames').value;
+
+    // Get total price
+    const totalPrice = document.querySelector(".cart-total").innerText;
+
+    // Create the WhatsApp message
+    const whatsappMessage = `Halo, saya ingin memesan produk sebagai berikut:%0A${productNames}%0A%0AAlamat Pengiriman:%0A${alamat}%0A%0ATotal Harga:%20Rp.${totalPrice}`;
+
+    // Combine the WhatsApp number and message
+    const whatsappLink = `https://wa.me/6285784718312?text=${whatsappMessage}`;
+
+    // Redirect to WhatsApp
+    window.location.href = whatsappLink;
+  });
+});
 
 // add event listener
 document.addEventListener("DOMContentLoaded", () => {

@@ -202,6 +202,9 @@
 	<span class="clear-cart">
 		<i class="fa fa-trash" aria-hidden="true"></i>
 	  </span>
+	  <span class="refresh">
+		<i class="fa fa-refresh" aria-hidden="true"></i>
+	  </span>
     <h2>Your Cart</h2>
     <!-- Other cart content goes here -->
 
@@ -272,6 +275,31 @@
 			  </div>
 			</div>
 		  </div>
+		  <div class="field is-horizontal">
+			<div class="field-label is-normal">
+				<label class="label">Total Produk</label>
+			</div>
+			<div class="field-body">
+				<div class="field">
+					<p class="control is-expanded">
+						<input id="totalProducts" class="input" type="text" placeholder="Total Produk" readonly>
+					</p>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Add this input field for displaying product names and counts -->
+		<div class="field is-horizontal">
+			<div class="field-label is-normal">
+				<label class="label">Nama Produk</label>
+			</div>
+			<div class="field-body">
+				<div class="field">
+					<textarea id="productNames" class="textarea" placeholder="Nama Produk" rows="4" readonly></textarea>
+				</div>
+			</div>
+		</div>
+
 		  <div class="cart-footer">
 		  <button class="banner-btn">Checkout</button>
 		  </div>
