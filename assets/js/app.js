@@ -141,16 +141,16 @@ class UI {
 
   checkoutAll() {
     const productDetails = cart.reduce((msg, item) => {
-      const subtotal = (item.price * item.amount).toFixed(3);
-      return msg + `Nama Produk : ${item.title}, Jumlah Barang : ${item.amount}, Subtotal : Rp. ${subtotal}\n`;
+      return msg + `${item.title} (${item.amount}), `;
     }, "");
   
+    const totalQuantity = cart.reduce((total, item) => total + item.amount, 0);
     const totalAmount = cart.reduce((total, item) => total + item.price * item.amount, 0).toFixed(3);
     const customerName = document.getElementById('nama').value;
     const customerAddress = document.getElementById('alamat').value;
     const customerPhoneNumber = document.getElementById('nohp').value;
   
-    const message = `Saya Ingin Membeli Semua Produk Ini :\n${productDetails}Total Keseluruhan : Rp. ${totalAmount}\n\n Informasi Customer : \nNama : ${customerName}\nAlamat : ${customerAddress}\nNo. Hp : ${customerPhoneNumber}`;
+    const message = `Saya Ingin Membeli Semua Produk Ini :\nProduk : ${productDetails}\nTotal Jumlah Barang : ${totalQuantity}\nTotal Keseluruhan : Rp. ${totalAmount}\n\nInformasi Customer :\nNama : ${customerName}\nAlamat : ${customerAddress}\nNo. Hp : ${customerPhoneNumber}`;
   
     const encodedMessage = encodeURIComponent(message);
   
@@ -161,6 +161,8 @@ class UI {
   
     window.open(whatsappLink, "_blank");
   }
+  
+  
   showCart() {
     cartOverlay.classList.add("transparentBcg");
     cartDOM.classList.add("showCart");
