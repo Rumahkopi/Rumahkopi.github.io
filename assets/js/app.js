@@ -150,7 +150,7 @@ class UI {
     const customerAddress = document.getElementById('alamat').value;
     const customerPhoneNumber = document.getElementById('nohp').value;
   
-    const message = `Saya Ingin Membeli Semua Produk Ini :\nProduk : ${productDetails}\nTotal Jumlah Barang : ${totalQuantity}\nTotal Keseluruhan : Rp. ${totalAmount}\n\nInformasi Customer :\nNama : ${customerName}\nAlamat : ${customerAddress}\nNo. Hp : ${customerPhoneNumber}`;
+    const message = `beli Saya Ingin Membeli Semua Produk Ini :\nProduk : ${productDetails}\nTotal Jumlah Barang : ${totalQuantity}\nTotal Keseluruhan : Rp. ${totalAmount}\n\nInformasi Customer :\nNama : ${customerName}\nAlamat : ${customerAddress}\nNo. Hp : ${customerPhoneNumber}`;
   
     const encodedMessage = encodeURIComponent(message);
   
