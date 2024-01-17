@@ -4,7 +4,6 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="WishFund,business,company,agency,multipurpose,modern,bootstrap4">
   <title>Rumah Kopi</title>
   <!-- bulma css -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
@@ -192,6 +191,40 @@
 
   </section>
   <!-- end of products -->
+
+  <section class="section">
+    <div class="container">
+		<h3 class="text-md mb-5">Pesan Yang Akan Anda Sampaikan Kepada Kami Mengenai Produk.</h3>
+        <form class="form">
+            <div class="field">
+                <label class="label">Nama</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Masukkan Nama anda" id="namapereview">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Subjek</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Masukkan subjek pesan" id="subjek">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Pesan</label>
+                <div class="control">
+                    <textarea class="textarea" placeholder="Tulis pesan Anda" id="pesan"></textarea>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <button class="button is-dark" id="submit" type="submit">Kirim Pesan</button>
+                </div>
+            </div>
+        </form>
+    </div>
+ </section>
 
   <!-- start of cart -->
 <div class="cart-overlay">
@@ -396,6 +429,7 @@
 	<script src="js/scriptapi.js" type="module"></script>
 	<script src="js/addtocart.js"></script>
 	<script src="./assets/js/app.js" type="module"></script>
+	<script src="js/insertreview.js" type="module"></script>
 	<script async src='https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js'></script>
 	<script>
 	  var wa_btnSetting = {"btnColor":"#16BE45","ctaText":"Hubungi Kami","cornerRadius":40,"marginBottom":20,"marginLeft":20,"marginRight":20,"btnPosition":"right","whatsAppNumber":"6285716349516","welcomeMessage":"Kirim pesan dengan keyword \"Ada Masalah\" ","zIndex":999999,"btnColorScheme":"light"};
@@ -404,6 +438,8 @@
 		_waEmbed(wa_btnSetting, wa_widgetSetting);
 	  };
 	</script>
+	</body>
+</html>
   
   
   

@@ -1,8 +1,7 @@
 import { postWithBearer } from "https://jscroot.github.io/api/croot.js";
 
-export let URLPost = `https://asia-southeast2-msyahid.cloudfunctions.net/InsertDataTransaksi`
-export let token = 'token';
-
+export let URLPost = `https://asia-southeast2-msyahid.cloudfunctions.net/InsertPesanReview`
+let token = "token";
 
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.querySelector("form");
@@ -17,25 +16,16 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
     export function GetDataForm(){
-        const namaproduk = document.querySelector("#productName").value;
-        const harga = document.querySelector("#productPrice").value;
-        const quantity = document.querySelector("#productQuantity").value;
-        const total = document.querySelector("#productTotal").value;
-        const namapembeli = document.querySelector("#namapembeli").value;
-        const email = document.querySelector("#email").value;
-        const alamat = document.querySelector("#alamat").value;
-        const nohp = document.querySelector("#nohp").value;
-        console.log(namapembeli)
+        const nama = document.querySelector("#namapereview").value;
+        const subjek = document.querySelector("#subjek").value;
+        const pesan = document.querySelector("#pesan").value;
+        console.log(nama)
     
         const data = {
-            namaproduk: namaproduk,
-            harga: harga,
-            quantity: quantity,
-            total : total,
-            namapembeli : namapembeli,
-            email : email,
-            alamat : alamat,
-            nohp : nohp,
+            nama: nama,
+            subjek: subjek,
+            pesan: pesan,
+
         };
         return data
     }
@@ -56,10 +46,8 @@ document.addEventListener("DOMContentLoaded", function() {
       if (result.status === true) {
         Swal.fire({
             icon: "success",
-            title: "Success Silahkan lanjutkan Pembayaran Melewati WhatsApp Ini.",
+            title: "Terimakasih Telah Mengirimkan Pesan Kepada Kami.",
             confirmButtonColor: '#000',
-        }).then(() => {
-            window.location.href = "https://wa.me/62895326369830?text=Bayar";
         });
     } else {
         Swal.fire({
