@@ -43,14 +43,17 @@ class UI {
         <!-- single product start -->
         <article class="product">
           <div class="img-container">
-            <img src=${product.image} alt="product" class="product-img"/>
+            <img src=${product.image} alt="product" class="product-img"/>  
             <button class="bag-btn" data-id=${product.id}>
               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
               add to cart
-            </button>
+            </button> 
+            <button class="view-btn" data-id=${product.id}>
+            <i class="fa fa-eye" aria-hidden="true"></i>
+            view
+          </button>      
           </div>
           <h3>${product.title}</h3>
-          <p>${product.description}.</p>
           <h4 class="label">Price: Rp. ${product.price}</h4>
         </article>
         <!-- single product end -->`;
@@ -62,6 +65,29 @@ class UI {
       console.log("Error = " + e);
     }
   }
+
+  viewProductDetails(product) {
+    const modal = document.getElementById("myModal");
+    const modalTitle = document.getElementById("modal-title");
+    const modalDescription = document.getElementById("modal-description");
+    const modalImage = document.getElementById("modal-image");
+    const modalPrice = document.getElementById("modal-price");
+
+    modalTitle.textContent = product.title;
+    modalDescription.textContent = product.description;
+    modalImage.src = product.image;
+    modalPrice.textContent = `Price : Rp. ${product.price}`;
+
+    // Display the modal
+    modal.style.display = "block";
+
+    // Close modal when the close button is clicked
+    const closeBtn = document.querySelector(".close");
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  }
+
   updateTotalProducts() {
     const totalProductsInput = document.getElementById('totalProducts');
     const productNamesInput = document.getElementById('productNames');
@@ -79,32 +105,64 @@ class UI {
 
     totalProductsInput.value = totalProducts;
 }
-  getBagButtons() {
-    const buttons = [...document.querySelectorAll(".bag-btn")];
-    buttonsDOM = buttons;
+getBagButtons() {
+  const buttons = [...document.querySelectorAll(".bag-btn")];
+  buttonsDOM = buttons;
 
-    buttons.forEach((button) => {
-      let id = button.dataset.id;
-      let inCart = cart.find((item) => item.id === id);
+  buttons.forEach((button) => {
+    let id = button.dataset.id;
+    let inCart = cart.find((item) => item.id === id);
 
-      if (inCart) {
-        button.innerText = "In Cart";
-        button.disabled = true;
-      } else {
-        button.addEventListener("click", (event) => {
-          event.target.innerText = "In Cart";
-          event.target.disabled = true;
+    if (inCart) {
+      button.innerText = "In Cart";
+      button.disabled = true;
+    } else {
+      button.addEventListener("click", (event) => {
+        event.target.innerText = "In Cart";
+        event.target.disabled = true;
 
-          let cartItem = { ...Storage.getProduct(id), amount: 1 };
-          cart = [...cart, cartItem];
-          Storage.saveCart(cart);
-          this.setCartValues(cart);
-          this.addCartItem(cartItem);
-          this.showCart();
-        });
-      }
-    });
-  }
+        let cartItem = { ...Storage.getProduct(id), amount: 1 };
+        cart = [...cart, cartItem];
+        Storage.saveCart(cart);
+        this.setCartValues(cart);
+        this.addCartItem(cartItem);
+        this.showCart();
+      });
+    }
+
+    // View button event listener
+// View button event listener
+const viewButton = button.parentElement.querySelector(".view-btn");
+
+// Tambahkan event listener mouseover untuk menampilkan tombol "View"
+button.parentElement.addEventListener("mouseover", () => {
+  viewButton.style.opacity = 1; // Set opacity to 1 to make it visible
+});
+
+// Tambahkan event listener mouseout untuk menyembunyikan tombol "View"
+button.parentElement.addEventListener("mouseout", () => {
+  viewButton.style.opacity = 0; // Set opacity to 0 to make it invisible
+});
+
+// Set initial opacity to 0 for the "View" button
+viewButton.style.opacity = 0;
+
+// Tambahkan event listener mouseout untuk menyembunyikan tombol "View"
+button.parentElement.addEventListener("mouseout", () => {
+  viewButton.style.opacity = 0; // Set opacity to 0 to make it invisible
+});
+
+// Set initial opacity to 0 for the "View" button
+viewButton.style.opacity = 0;
+
+// View button event listener
+viewButton.addEventListener("click", () => {
+  const id = viewButton.dataset.id;
+  const product = Storage.getProduct(id);
+  this.viewProductDetails(product);
+});
+  });
+}
 
   setCartValues(cart) {
     let tempTotal = 0;
@@ -186,7 +244,11 @@ class UI {
       if (checkoutAllBtn) {
         checkoutAllBtn.addEventListener("click", () => this.checkoutAll());
       }
-    
+        // Add event listener to close the modal when the close button is clicked
+      const closeModalButton = document.querySelector(".close-modal");
+      if (closeModalButton) {
+        closeModalButton.addEventListener("click", () => this.closeModal());
+      }
   }
 
   populateCart(cart) {
