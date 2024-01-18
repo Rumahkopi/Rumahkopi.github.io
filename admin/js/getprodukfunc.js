@@ -36,6 +36,30 @@ function createTableRow(value) {
         row.appendChild(cell);
     });
 
+        // Add a new cell for the buttons
+        const buttonsCell = document.createElement("td");
+        const buttonsContainer = document.createElement("div");
+        buttonsContainer.className = "buttons is-right";
+    
+        const editButton = document.createElement("a");
+        editButton.href = `edit.html?_id=${value._id}`; // Replace #IDEDIT# with the actual property containing the ID
+        editButton.className = "button is-dark jb-modal";
+        editButton.dataset.produkId = value.id; // Replace #IDHAPUS# with the actual property containing the ID
+        editButton.dataset.target = "edit-modal";
+        editButton.type = "button";
+        editButton.innerHTML = '<span class="icon"><i class="mdi mdi-eye-circle"></i></span>';
+    
+        const deleteButton = document.createElement("button");
+        deleteButton.className = "button is-dark";
+        deleteButton.type = "button";
+        deleteButton.onclick = () => deleteProduk(value._id); // Replace #DELETE# with the actual property containing the ID
+        deleteButton.innerHTML = '<span class="icon"><i class="mdi mdi-delete-circle"></i></span>';
+    
+        buttonsContainer.appendChild(editButton);
+        buttonsContainer.appendChild(deleteButton);
+        buttonsCell.appendChild(buttonsContainer);
+        row.appendChild(buttonsCell);
+
     return row;
 }
 
@@ -56,11 +80,14 @@ function showModal(imageSrc) {
 // Function to handle API response
 function handleApiResponse(results) {
     console.log(results);
-    results.forEach(value => {
+
+    // Reverse the order of the results array
+    const reversedResults = results.reverse();
+
+    reversedResults.forEach(value => {
         const row = createTableRow(value);
         tableContainer.appendChild(row);
     });
-
     // Hide overlay when the page is fully loaded
     setTimeout(() => {
         document.getElementById('loader-wrapper').style.display = 'none';
