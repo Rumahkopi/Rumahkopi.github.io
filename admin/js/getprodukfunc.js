@@ -1,4 +1,5 @@
-import {setInner,addChild } from "https://jscroot.github.io/element/croot.js";
+import {addChild } from "https://jscroot.github.io/element/croot.js";
+import { get } from "https://jscroot.github.io/api/croot.js";
 
 export let URLDataProduk = "https://asia-southeast2-msyahid.cloudfunctions.net/GetDataProduk";
 export let tableTag="tr";
@@ -45,3 +46,14 @@ export function isiRow(value){
     console.log(content);
     addChild("produk",tableTag,tableRowClass,content);
 }
+
+get(URLDataProduk,responseData);
+
+  // Menghilangkan overlay saat halaman selesai dimuat
+  document.onreadystatechange = function () {
+    if (document.readyState === 'complete') {
+      setTimeout(function () {
+        document.getElementById('loader-wrapper').style.display = 'none';
+      }, 2000); // Sesuaikan timeout dengan durasi animasi CSS
+    }
+  };

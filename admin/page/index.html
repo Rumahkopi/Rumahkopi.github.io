@@ -53,7 +53,7 @@
       <aside class="aside is-placed-left is-expanded">
         <div class="aside-tools">
           <div class="aside-tools-label">
-            <span><b>Admin </b> Rumah Kopi</span>
+            <span> <b>Admin </b> Rumah Kopi</span>
           </div>
         </div>
         <div class="menu is-menu-main">
@@ -75,11 +75,23 @@
               </a>
             </li>
             <li>
-              <a href="logreview.html" class="has-icon">
+            <a href="logreview.html" class="has-icon">
                 <span class="icon"><i class="mdi mdi-table"></i></span>
                 <span class="menu-item-label">Log Review</span>
-              </a>
+            </a>
             </li>
+            <li>
+                <a href="logpembelian.html" class="has-icon">
+                    <span class="icon"><i class="mdi mdi-table"></i></span>
+                    <span class="menu-item-label">Log Transaksi</span>
+                </a>
+                </li>
+            <li>
+                <a href="keluhan.html" class="has-icon">
+                    <span class="icon"><i class="mdi mdi-table"></i></span>
+                    <span class="menu-item-label">Log Keluhan</span>
+                </a>
+                </li>
           </ul>
           <p class="menu-label">About</p>
           <ul class="menu-list">
@@ -135,37 +147,36 @@
     </div>
   </section>
   <section class="section is-main-section">
-    <div class="card has-table has-mobile-sort-spaced">
+    <div class="card has-table">
       <header class="card-header">
         <p class="card-header-title">
-          <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
-          Konsumen
+          <span class="icon"><i class="mdi mdi-table"></i></span>
+          Produk
         </p>
+        <a href="forms.html" class="card-header-icon">
+          <span class="icon"><i class="mdi mdi-plus-circle"></i></span>
+        </a>
       </header>
       <div class="card-content">
         <div class="b-table has-pagination">
           <div class="table-wrapper has-mobile-cards">
-            <table class="table is-fullwidth is-striped is-hoverable is-sortable is-fullwidth">
-              <tbody id="transaksi">
-                <tr>
-                  <th>Pembeli</th>
-                  <th>Email</th>
-                  <th>Produk</th>
-                  <th>Harga</th>
-                  <th>Quantity</th>
-                  <th>Total</th>
-                  <th>Alamat</th>
-                  <th>No.HP</th>
-                </tr>
-                
-                <tr>
-                </tr>
-                </tbody>
+            <table class="table is-fullwidth is-striped is-hoverable is-fullwidth">
+              <tbody id="produk">
+              <tr>
+                <th>Name</th>
+                <th>Harga</th>
+                <th>Deskripsi</th>
+                <th>Stok</th>
+                <th>Image</th>
+                <th></th>
+              </tr>
+              <tr>
+              </tr>
+              </tbody>
             </table>
           </div>
         </div>
       </div>
-    </div>
   </section>
   <footer class="footer">
     <div class="container-fluid">
@@ -191,7 +202,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 <script type="text/javascript" src="../js/chart.sample.min.js"></script>
 <script type="module" src="../js/logout.js"></script>
-<script type="module" src="../js/gettransaksi.js"></script>
+<script type="module" src="../js/getprodukfunc.js"></script>
 
 <!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
 <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
