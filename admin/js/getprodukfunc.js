@@ -1,59 +1,71 @@
-import {addChild } from "https://jscroot.github.io/element/croot.js";
+// script.js
 import { get } from "https://jscroot.github.io/api/croot.js";
 
-export let URLDataProduk = "https://asia-southeast2-msyahid.cloudfunctions.net/GetDataProduk";
-export let tableTag="tr";
-export let tableRowClass="content is-size-6";
-export let tableTemplate=`
-<td data-label="Name">#NAMA#</td>
-<td data-label="Harga">#HARGA#</td>
-<td data-label="Deskripsi">#DESKRIPSI#</td>
-<td data-label="Stok">#STOK#</td>
-<td data-label="image"><img
-src="#IMAGE#"
-alt="product"
-class="product-img"
-width="50"
-height="50"
-/></td>
-<td>
-<div class="buttons is-right">
-  <a href="edit.html?_id=#IDEDIT#" class="button is-dark jb-modal" data-produk-id="#IDHAPUS#" data-target="edit-modal" type="button">
-    <span class="icon"><i class="mdi mdi-eye-circle"></i></span>
-  </a>
-  <button class="button is-dark" type="button" onclick="deleteProduk('#DELETE#')">
-    <span class="icon"><i class="mdi mdi-delete-circle"></i></span>
-  </button>
-</div>
-</td>
-` 
+const URLDataProduk = "https://asia-southeast2-msyahid.cloudfunctions.net/GetDataProduk";
+const tableContainer = document.getElementById("produk");
 
-export function responseData(results){
+// Function to create a table row
+function createTableRow(value) {  
+    const row = document.createElement("tr");
+    row.className = "content is-size-6";
+
+    const columns = ["nama", "harga", "deskripsi", "stok", "image"];
+    columns.forEach(column => {
+        const cell = document.createElement("td");
+        cell.dataset.label = column === "image" ? "image" : column;
+        
+        if (column === "image") {
+            const image = document.createElement("img");
+            image.src = value[column];
+            image.alt = "product";
+            image.className = "product-img";
+            image.width = 50;
+            image.height = 50;
+
+            // Set data-id attribute for image
+            image.dataset.id = value.nama;
+
+            // Add click event listener to show modal
+            image.addEventListener("click", () => showModal(value[column], value.nama));
+
+            cell.appendChild(image);
+        } else {
+            cell.textContent = value[column];
+        }
+
+        row.appendChild(cell);
+    });
+
+    return row;
+}
+
+// Function to show modal
+function showModal(imageSrc) {
+    const modal = document.getElementById("myModal");
+    const modalImage = document.getElementById("modalImage");
+
+    modalImage.src = imageSrc;
+    modal.style.display = "block";
+
+    const closeBtn = document.querySelector(".close");
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = 'none';
+    });
+}
+
+// Function to handle API response
+function handleApiResponse(results) {
     console.log(results);
-    results.reverse().forEach(isiRow);
-}
+    results.forEach(value => {
+        const row = createTableRow(value);
+        tableContainer.appendChild(row);
+    });
 
-export function isiRow(value){
-    let content=tableTemplate.replace("#NAMA#",value.nama)
-    .replace("#HARGA#",value.harga)
-    .replace("#DESKRIPSI#",value.deskripsi)
-    .replace("#STOK#",value.stok)
-    .replace("#IMAGE#",value.image)
-    .replace("#IDEDIT#",value._id)
-    .replace("#DELETE#",value._id)
-    .replace("#IDHAPUS#",value._id);
-    
-    console.log(content);
-    addChild("produk",tableTag,tableRowClass,content);
-}
-
-get(URLDataProduk,responseData);
-
-  // Menghilangkan overlay saat halaman selesai dimuat
-  document.onreadystatechange = function () {
-    if (document.readyState === 'complete') {
-      setTimeout(function () {
+    // Hide overlay when the page is fully loaded
+    setTimeout(() => {
         document.getElementById('loader-wrapper').style.display = 'none';
-      }, 2000); // Sesuaikan timeout dengan durasi animasi CSS
-    }
-  };
+    }, 2000);
+}
+
+// Get data from API and handle the response
+get(URLDataProduk, handleApiResponse);

@@ -1,40 +1,70 @@
-import {addChild } from "https://jscroot.github.io/element/croot.js";
 import { get } from "https://jscroot.github.io/api/croot.js";
 
-export let URLDataTransaksi = "https://asia-southeast2-msyahid.cloudfunctions.net/GetDataTransaksi";
-export let tableTag="tr";
-export let tableRowClass="content is-size-6";
-export let tableTemplate=`              
-<td data-label="Transaksi">#TRANSAKSI#</td>
-<td data-label="Nohp">#NOHP#</td>
-<td data-label="Waktu">#WAKTU#</td>
-<td data-label="image"><img
-src="#IMAGE#"
-alt="product"
-class="product-img"
-width="50"
-height="50"
-/></td>
-` 
+const URLDataTransaksi = "https://asia-southeast2-msyahid.cloudfunctions.net/GetDataTransaksi";
+const tableContainer = document.getElementById("transaksi");
 
-export function responseData(results){
+// Function to create a table row
+function createTableRow(value) {
+    const row = document.createElement("tr");
+    row.className = "content is-size-6";
+
+    const columns = ["transaksi_number", "user_phone", "formatted_time", "buktitf"];
+    columns.forEach(column => {
+        const cell = document.createElement("td");
+        cell.dataset.label = column === "buktitf" ? "image" : column;
+        
+        if (column === "buktitf") {
+            const image = document.createElement("img");
+            image.src = value[column];
+            image.alt = "product";
+            image.className = "product-img";
+            image.width = 50;
+            image.height = 50;
+
+            // Set data-id attribute for image
+            image.dataset.id = value.transaksi_number;
+
+            // Add click event listener to show modal
+            image.addEventListener("click", () => showModal(value[column], value.transaksi_number));
+
+            cell.appendChild(image);
+        } else {
+            cell.textContent = value[column];
+        }
+
+        row.appendChild(cell);
+    });
+
+    return row;
+}
+
+// Function to show modal
+function showModal(imageSrc, imageId) {
+    const modal = document.getElementById("myModal");
+    const modalImage = document.getElementById("modalImage");
+
+    modalImage.src = imageSrc;
+    modal.style.display = "block";
+
+    const closeBtn = document.querySelector(".close");
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = 'none';
+    });
+}
+
+// Function to handle API response
+function handleApiResponse(results) {
     console.log(results);
-    results.forEach(isiRow);
-}
+    results.forEach(value => {
+        const row = createTableRow(value);
+        tableContainer.appendChild(row);
+    });
 
-export function isiRow(value){
-    let content=tableTemplate.replace("#TRANSAKSI#",value.transaksi_number).replace("#NOHP#",value.user_phone).replace("#WAKTU#",value.formatted_time).replace("#IMAGE#",value.buktitf);
-    console.log(content);
-    addChild("transaksi",tableTag,tableRowClass,content);
-}
-
-get(URLDataTransaksi,responseData);
-
-  // Menghilangkan overlay saat halaman selesai dimuat
-  document.onreadystatechange = function () {
-    if (document.readyState === 'complete') {
-      setTimeout(function () {
+    // Hide overlay when the page is fully loaded
+    setTimeout(() => {
         document.getElementById('loader-wrapper').style.display = 'none';
-      }, 2000); // Sesuaikan timeout dengan durasi animasi CSS
-    }
-  };
+    }, 2000);
+}
+
+// Get data from API and handle the response
+get(URLDataTransaksi, handleApiResponse);

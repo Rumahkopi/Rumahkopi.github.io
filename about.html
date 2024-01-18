@@ -8,12 +8,12 @@
   <title>Rumah Kopi</title>
   <!-- bulma css -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="shortcut icon" type="image/x-icon" href="./images/logo2.png" />
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/images/logo2.png" />
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./assets/css/homestyle.css">
   <link rel="stylesheet" href="./assets/css/style.css" />
 	<!-- Icon -->
-  <link rel="stylesheet" href="css/icofont/icofont.min.css">
+  <link rel="stylesheet" href="./assets/icofont/icofont.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <body>
@@ -51,7 +51,7 @@
 				<a class="navbar-link" href="about.html">About</a>
 					</span>
 			  <!-- app logo -->
-			  <img class="image" src="images/logo2.png" alt="store logo" width="70" height="70"/>
+			  <img class="image" src="./assets/images/logo2.png" alt="store logo" width="70" height="70"/>
 			  <span class="nav-item">
 				<a class="navbar-link" href="index.html">Produk</a>
 					</span>	
@@ -138,11 +138,12 @@
 			  <div class="field-body">
 				<div class="field">
 				  <p class="control is-expanded">
-					<input id="nama" class="input" type="text" placeholder="Masukkan Alamat Anda" required>
+					<input id="alamat" class="input" type="text" placeholder="Masukkan Alamat Anda" required>
 				  </p>
 				</div>
 			  </div>
 			</div>
+			
 			<div class="field is-horizontal">
 			  <div class="field-label is-normal">
 				<label class="label">No. HP</label>
@@ -150,24 +151,51 @@
 			  <div class="field-body">
 				<div class="field">
 				  <p class="control is-expanded">
-					<input id="nama" class="input" type="text" placeholder="Masukkan No. HP Anda" required>
+					<input id="nohp" class="input" type="text" placeholder="Masukkan No. HP Anda" required>
 				  </p>
 				</div>
 			  </div>
 			</div>
+			<div class="field is-horizontal">
+			  <div class="field-label is-normal">
+				  <label class="label">Total Produk</label>
+			  </div>
+			  <div class="field-body">
+				  <div class="field">
+					  <p class="control is-expanded">
+						  <input id="totalProducts" class="input" type="text" placeholder="Total Produk" readonly>
+					  </p>
+				  </div>
+			  </div>
+		  </div>
+		  
+		  <!-- Add this input field for displaying product names and counts -->
+		  <div class="field is-horizontal">
+			  <div class="field-label is-normal">
+				  <label class="label">Nama Produk</label>
+			  </div>
+			  <div class="field-body">
+				  <div class="field">
+					  <textarea id="productNames" class="textarea" placeholder="Nama Produk" rows="4" readonly></textarea>
+				  </div>
+			  </div>
+		  </div>
+  
 			<div class="cart-footer">
-			<button class="banner-btn">Checkout</button>
+			<button class="checkout-all-btn">Checkout</button>
 			</div>
 	  </form>
 	  </div>
 	  </div>
+	</div>
+	</div>
 	</div>
 <section class="section about-page">
 	<div class="container">
 		<div class="columns is-align-items-center">
 			<div class="column is-4-desktop is-5-tablet">
 				<div class="about-item-img">
-					<img src="images/gallery/5.jpg" alt="" class=" w-100">
+					<img src="./assets/images/gallery/5.jpg" alt="" class=" w-100">
 				</div>
 			</div>
 
@@ -199,7 +227,7 @@
 			<div class="column is-3-desktop is-6-tablet">
 				<div class="team-item-wrap">
 					<div class="team-item is-relative">
-						<img src="images/team/syahid.jpg" alt="" class=" w-100">
+						<img src="./assets/images/team/syahid.jpg" alt="" class=" w-100">
 						<div class="team-img-hover">
 							<ul class="team-social list-inline">
 								<li class="list-inline-item">
@@ -221,7 +249,7 @@
 			<div class="column is-3-desktop is-6-tablet">
 				<div class="team-item-wrap">
 					<div class="team-item is-relative">
-						<img src="images/team/gilar.jpg" alt="" class=" w-100">
+						<img src="./assets/images/team/gilar.jpg" alt="" class=" w-100">
 						<div class="team-img-hover">
 							<ul class="team-social list-inline">
 								<li class="list-inline-item">
@@ -333,7 +361,7 @@
 		</div>
 	</div>
 </footer>
-<script src="js/script.js"></script>
+<script src="./assets/js/script.js"></script>
 <script src="./assets/js/app.js" type="module"></script>
 <script async src='https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js'></script>
 <script>
