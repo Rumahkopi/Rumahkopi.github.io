@@ -196,6 +196,7 @@
                 <label class="label">Nama</label>
                 <div class="control">
                     <input class="input" type="text" placeholder="Masukkan Nama anda" id="namapereview">
+					<p id="namaNotification" class="help is-danger">Label ini harus diisi dan berisi angka.</p>
                 </div>
             </div>
 
@@ -273,6 +274,7 @@
 			  <div class="field">
 				<p class="control is-expanded">
 				  <input id="nama" class="input" type="text" placeholder="Masukkan Nama Anda" required>
+				  <p id="namaNotification" class="help is-danger">Label ini harus diisi dan berisi huruf.</p>
 				</p>
 			  </div>
 			</div>
@@ -285,6 +287,7 @@
 			  <div class="field">
 				<p class="control is-expanded">
 				  <input id="alamat" class="input" type="text" placeholder="Masukkan Alamat Anda" required>
+				  <p id="alamatNotification" class="help is-danger">Label ini harus diisi dan berisi huruf.</p>
 				</p>
 			  </div>
 			</div>
@@ -298,6 +301,7 @@
 			  <div class="field">
 				<p class="control is-expanded">
 				  <input id="nohp" class="input" type="text" placeholder="Masukkan No. HP Anda" required>
+				  <p id="nohpNotification" class="help is-danger">Label ini harus diisi dan berisi angka. contoh (08xxxxx)</p>
 				</p>
 			  </div>
 			</div>
@@ -420,6 +424,35 @@
 	</div>
 </footer>
 	<!-- Add the smooth scroll script -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+		  var form = document.getElementById('nameForm');
+		  var checkoutButton = document.querySelector('.checkout-all-btn');
+	  
+		  function isFormValid() {
+			var inputs = form.querySelectorAll('input[required], textarea[required]');
+			var isValid = true;
+	  
+			inputs.forEach(function (input) {
+			  if (input.value.trim() === '' || (isNaN(input.value) && input.id !== 'nama' && input.id !== 'alamat')) {
+				isValid = false;
+			  }
+			});
+	  
+			return isValid;
+		  }
+	  
+		  function updateCheckoutButton() {
+			checkoutButton.disabled = !isFormValid();
+		  }
+	  
+		  form.addEventListener('input', function () {
+			updateCheckoutButton();
+		  });
+	  
+		  updateCheckoutButton();
+		});
+	  </script>	  
 	<script src="https://cdn.jsdelivr.net/gh/Rumahkopi/js@0.0.3/user/app.js" type="module"></script>
 	<script src="https://cdn.jsdelivr.net/gh/Rumahkopi/js@0.0.3/user/insertreview.js" type="module"></script>
 	<script async src='https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js'></script>
