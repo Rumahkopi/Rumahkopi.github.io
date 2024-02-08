@@ -247,6 +247,7 @@
       <div class="modal-text">
         <h2 id="modal-title"></h2>
         <p id="modal-description"></p>
+		<p id="modal-stok"></p>
         <p id="modal-price"></p>
       </div>
     </div>
@@ -264,14 +265,14 @@
                 <label class="label">Nama</label>
                 <div class="control">
                     <input class="input" type="text" placeholder="Masukkan Nama anda" id="namapereview">
-					<p id="namaNotification" class="help is-danger">Label ini harus diisi dan berisi angka.</p>
+					<p id="namaNotification" class="help is-danger">Label ini harus diisi.</p>
                 </div>
             </div>
 
             <div class="field">
                 <label class="label">Subjek</label>
                 <div class="control">
-                    <input class="input" type="text" placeholder="Masukkan subjek pesan" id="subjek">
+                    <input class="input" type="text" placeholder="Masukkan Subjek Pesan" id="subjek">
                 </div>
             </div>
 
@@ -349,12 +350,12 @@
 		  </div>
 		  <div class="field is-horizontal">
 			<div class="field-label is-normal">
-			  <label class="label">Alamat</label>
+			  <label class="label">Alamat / Meja</label>
 			</div>
 			<div class="field-body">
 			  <div class="field">
 				<p class="control is-expanded">
-				  <input id="alamat" class="input" type="text" placeholder="Masukkan Alamat Anda" required>
+				  <input id="alamat" class="input" type="text" placeholder="Masukkan Alamat Atau Meja Jika Anda Pesan Di Tempat" required>
 				  <p id="alamatNotification" class="help is-danger">Label ini harus diisi dan berisi huruf.</p>
 				</p>
 			  </div>
@@ -374,6 +375,7 @@
 			  </div>
 			</div>
 		  </div>
+
 		  <div class="field is-horizontal">
 			<div class="field-label is-normal">
 				<label class="label">Total Produk</label>
